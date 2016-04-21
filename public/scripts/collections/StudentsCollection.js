@@ -9,4 +9,4 @@ const StudentsCollection = Backbone.Collection.extend({
 
 
 
-export default new StudentsCollection;
+export default new StudentsCollection();
