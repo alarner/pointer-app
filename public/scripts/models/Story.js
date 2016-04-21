@@ -11,6 +11,6 @@ export default Backbone.Model.extend({
 		category: '',
 		coverImage: ''
 	},
-	rootUrl: '/api/v1/stories',
+	rootUrl: '/api/v1/Story',
 	idAttribute: 'id'
 });
