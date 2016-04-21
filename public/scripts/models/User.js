@@ -12,8 +12,8 @@ const UserModel = Backbone.Model.extend ({
 		// type should be either 'teacher' or 'admin'
 		type: ''
 	},
-	rootUrl: '/api/v1/user',
-	idAttribute: ''
+	urlRoot: '/api/v1/user',
+	idAttribute: 'id'
 
 });
 
