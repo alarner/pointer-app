@@ -15,6 +15,30 @@
 * Each new technical task should have its own feature branch with a short name describing the new feature. The format of the branch name should be in snake case, such as *add_backend_story_model*.
 * When a task is complete the developer should issue a pull request for that feature branch. That developer cannot merge the pull request until they get at least three thumbs ups from other developers in the class.
 
+#### Steps to take
+
+1. Take the ticket from the whiteboard and move it to the "In Progress" column.
+1. Make sure you're on the master branch.
+1. Make sure you have the latest version of the code: `git pull origin master`
+1. Create a new branch (you should be on master when you do this): `git checkout -b branch_name_goes_here`
+1. Do the development work that needs to be done for that ticket.
+1. Test that the feature I implemented actually works.
+1. Check the coding guidelines to make sure you meet all of them.
+1. Double check the code changes you've made: `git status`, `git diff`
+1. `git add .`, `git commit ...`
+1. Run a `git pull origin master` to ensure that you have the latest code.
+1. Re-test your code.
+1. Push your code `git push origin branch_name_goes_here`
+1. Create your pull request, leave a comment explaining what you did.
+1. Move ticket to PR column.
+1. After fixing any issues and getting three thumbs up, merge pull request into master.
+1. Move ticket to completed column.
+1. Tell everyone to run a `git pull origin master`.
+1. Switch back to your master branch: `git checkout master`
+1. Pull newest changes from master: `git pull origin master`
+1. Rinse and repeat
+
+
 ### Code Format
 
 * White space should be in tabs, not spaces.
