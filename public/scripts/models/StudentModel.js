@@ -10,7 +10,7 @@ const StudentModel = Backbone.Model.extend({
 
 	},
 	idAttribute: 'id',
-//URL still undefined
+
 	rootUrl: '/api/v1/student' 
 });
 

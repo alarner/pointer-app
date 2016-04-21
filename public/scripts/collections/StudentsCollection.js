@@ -7,6 +7,6 @@ const StudentsCollection = Backbone.Collection.extend({
 	url: '/api/v1/student'
 });
 
-//URL still undefined
+
 
 export default new StudentsCollection;
