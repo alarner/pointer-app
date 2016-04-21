@@ -22,6 +22,8 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import App from './components/App';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
+import Stories from './components/pages/Stories';
+
 
 
 const router = (
@@ -36,5 +38,6 @@ const router = (
 
 ReactDOM.render(router, document.getElementById('app'));
 
-ReactDOM.render(Footer, document.querySelector('main'));
+
+
 
