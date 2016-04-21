@@ -6,13 +6,13 @@ const UserModel = Backbone.Model.extend ({
 		firstName: '',
 		lastName: '',
 		email: '',
-		createAt: null,
+		createdAt: null,
 		updatedAt: null,
 		deletedAt: null,
-		// type shoudl be either 'teacher' or 'admin'
+		// type should be either 'teacher' or 'admin'
 		type: ''
 	},
-	rootUrl: '',
+	rootUrl: '/api/v1/user',
 	idAttribute: ''
 
 });
