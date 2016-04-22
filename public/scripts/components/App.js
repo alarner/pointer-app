@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from './navigation';
+import Footer from './footer'; 
 
 export default React.createClass({
 	render: function() {
@@ -7,6 +8,7 @@ export default React.createClass({
 			<main>
 				<Navigation />
 				{this.props.children}
+				<Footer />
 			</main>
 		);
 	}
