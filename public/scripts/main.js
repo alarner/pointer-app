@@ -23,7 +23,7 @@ import App from './components/App';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Stories from './components/pages/Stories';
-import ReadPage from './components/pages/ReadPage';
+import Read from './components/pages/ReadPage';
 
 
 const router = (
@@ -32,7 +32,7 @@ const router = (
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
-			<Route path="/readpage" component={ReadPage} />
+			<Route path="/read" component={Read} />
 		</Route>
 	</Router>
 );
