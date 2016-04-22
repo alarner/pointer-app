@@ -5,7 +5,6 @@ export default Backbone.Model.extend({
 		id: null,
 		createdAt: null,
 		updatedAt: null,
-		deletedAt: null,
 		title: '',
 		author: '',
 		category: '',
