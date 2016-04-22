@@ -80,6 +80,7 @@
     "serve-favicon": "~2.3.0",
     "simple-ssh": "^0.8.9",
     "skeleton-scss": "^2.0.4",
+    "underscore": "^1.8.3",
     "validator": "^5.1.0"
   }
 }
