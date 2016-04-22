@@ -1,4 +1,4 @@
-require('./StoryRead');
+// require('./StoryRead');
 module.exports = bookshelf.model('Student', {
 	tableName: 'students',
 	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],

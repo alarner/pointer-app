@@ -24,6 +24,7 @@ import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Stories from './components/pages/Stories';
 import Read from './components/pages/ReadPage';
+import Login from './components/pages/Login';
 
 
 const router = (
@@ -33,6 +34,7 @@ const router = (
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
 			<Route path="/read" component={Read} />
+			<Route path="/login" component={Login}/>
 		</Route>
 	</Router>
 );
