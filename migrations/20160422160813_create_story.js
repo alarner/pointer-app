@@ -1,3 +1,4 @@
+
 exports.up = function(knex, Promise) {
 	return knex.schema.createTable('stories', function(t) {
 		t.increments('id').unsigned().primary();
@@ -15,3 +16,4 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
 	return knex.schema.dropTable('stories');
 };
+
