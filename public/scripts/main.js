@@ -32,7 +32,7 @@ const router = (
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
-			<Route path="/stories" component={Details} />
+			<Route path="/details" component={Details} />
 		</Route>
 	</Router>
 );
