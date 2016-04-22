@@ -45,7 +45,7 @@
 ## Models
 
 *Add UML diagram here*
-
+![](./pointer-app.png)
 ## Contributors
 
 *Add your GitHub profile here*
