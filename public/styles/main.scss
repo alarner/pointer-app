@@ -1,3 +1,59 @@
 @import '../../node_modules/skeleton-scss/scss/skeleton';
 @import 'global';
 @import 'log-in';
+
+// button styles
+
+@import url(https://fonts.googleapis.com/css?family=Gochi+Hand|Titillium+Web:400,700,200);
+
+///////////////////////////////////////////
+//      CATEGORY SUB-SECTION STYLES:     //
+///////////////////////////////////////////
+
+
+
+.category-button {
+	font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+	font-size: 1.25em;
+	display: inline-block;
+  box-sizing(content-box);
+  height: 24px;
+  position: relative;
+  content: "";
+  cursor: pointer;
+  margin: 0 13px 0 0;
+  padding: 8px 28px 10px 20px;
+  border: none;
+  border-radius: 4px 1px 1px 4px;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background-color: #2654bc;
+  box-shadow: 0 5px 0 0 #0D3BA3 , 5px 5px 0 0 #0D3BA3;
+}
+
+
+.category-button::before {
+  display: inline-block;
+  box-sizing: content-box;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  content: "";
+  cursor: pointer;
+  top: 6px;
+  right: -16px;
+  border: none;
+  border-radius: 1px 1px 4px;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #2654bc;
+  box-shadow: 0 6px 0 0 #0D3BA3;
+  text-shadow: none;
+  transform: rotateY(1deg) rotateZ(-45deg);
+}
+
