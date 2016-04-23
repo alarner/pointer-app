@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
 
 		t.string('image').notNull();
 		t.text('body').notNull();
-
+		
 	});
 };
 
