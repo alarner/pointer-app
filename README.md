@@ -71,5 +71,6 @@
 *Add UML diagram here*
 ![](./Pointer-App.png)
 ## Contributors
+afmonty
 
 *Add your GitHub profile here*
