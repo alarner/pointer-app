@@ -47,3 +47,4 @@ export default React.createClass({
 		browserHistory.push('/');
 	}
 });
+
