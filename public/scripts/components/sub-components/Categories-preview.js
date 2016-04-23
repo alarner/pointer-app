@@ -4,12 +4,13 @@ import StoryBox from '../../collections/StoryCollection.js';
 export default React.createClass({
 	render: function() {
 		return (
-			<div className="categories-preview">
+			<div className="categories-preview row">
 				<h3>{this.props.category}</h3>
-				<StoryBox
-				pic= {pic}
-				title= {title} />
-				<button> See more {this.props.category}</button>
+				<StoryBox class="three columns"/>
+				<StoryBox class="three columns"/>
+				<StoryBox class="three columns"/>
+				<StoryBox class="three columns"/>
+				<button className="category-button"> See more {this.props.category}</button>
 			</div>
 		);
 	}
