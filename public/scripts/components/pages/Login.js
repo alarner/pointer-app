@@ -39,14 +39,14 @@ export default React.createClass({
 			email: this.refs.email.value,
 			password: this.refs.password.value
 		},
-		headers: {
-			Accept: 'application/json'
-		},
+		// headers: {
+		// 	Accept: 'application/json'
+		// },
 		success: (loggedArg) => {
 				
 		
 			this.state.user.set(loggedArg);
-			browserHistory.push('/Stories');
+			browserHistory.push('/stories');
 		},
 		error: (errorArg) => {
 				
