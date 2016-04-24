@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 import user from '../../models/user';
+import Navigation from '../Navigation';
 
 
 
@@ -17,7 +18,8 @@ export default React.createClass({
 
 	render: function() {
 		return (
-			<section className="page-login seven columns">
+			<section className="page-login container">
+				<Navigation />
 				<form onSubmit={this.login} className="login-box"> Login
 					<input className="u-full-width" type="text" placeholder="email" ref='email'/>
 					<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
