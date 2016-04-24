@@ -48,7 +48,7 @@ export default React.createClass({
 		},
 		error: (errorArg) => {
 				
-				// need to check the error messages coming from the backend to be more specific and redirects to registeration page incase of invalid account.
+
 				this.setState({errors: errorArg.responseJSON});
 			}
 		});
