@@ -20,7 +20,7 @@ export default React.createClass({
 		return (
 			<section className="page-login container">
 				<Navigation />
-				<form onSubmit={this.login} className="login-box"> Login
+				<form onSubmit={this.login} className="login-box"> <h1>Login</h1>
 					<input className="u-full-width" type="text" placeholder="email" ref='email'/>
 					<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
 					<input className="u-full-width" type="password" placeholder="password" ref='password'/>
@@ -46,7 +46,7 @@ export default React.createClass({
 				
 		
 			this.state.user.set(loggedArg);
-			browserHistory.push('/dashboard');
+			browserHistory.push('/Stories');
 		},
 		error: (errorArg) => {
 				
