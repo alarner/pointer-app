@@ -1,44 +1,41 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {Link} from 'react-router';
 import $ from 'jquery';
-import user from '../models/User';
+import user from '../models/user';
+import {browserHistory} from 'react-router';
+
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			user: user
 		};
-		console.log(this.state.user);
 	},
-	compondentDidMount: function() {
+
+	componentDidMount: function() {
 		this.state.user.on('change', () => {
-			this.setState({user: user});
+			this.setState({
+				user: user
+			});
 		});
 	},
 
 	render: function() {
 		if(this.state.user.get('id')) {
-			return (
-			<nav>
-				<img src="" />
-				<a href="#" onClick={this.logout}>Logout</a>
-			</nav>
-		);
-
+			return (<nav>
+			<img src="../../images/pointer_logo.png" />
+			<a href="#" onClick={this.logout}>Logout</a>
+		</nav>);
 		} else {
-			return (
-			<nav>
-				<img src="" />
-				<Link to="/contact">Contact</Link> 
-				<Link to="login">Login</Link> 
-			</nav>
-			);
-		}	
+		return (<nav>
+			<Link to='/register'>Contact</Link>		
+			<Link to='/login'>Login</Link>
+		</nav>);
+		}
 	},
+
 	logout: function(e) {
 		e.preventDefault();
-		console.log('clicky click click');
-		console.log(this.state.user);
 		this.state.user.clear();
 		$.ajax({
 			type: 'POST',
