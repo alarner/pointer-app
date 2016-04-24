@@ -19,7 +19,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section className="page-login container">
-				<Navigation />
+				
 				<form onSubmit={this.login} className="login-box"> <h1>Login</h1>
 					<input className="u-full-width" type="text" placeholder="email" ref='email' title="Should be a valid email address" required="required"/>
 					<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
