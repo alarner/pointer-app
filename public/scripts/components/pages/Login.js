@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 import user from '../../models/user';
-import Navigation from '../Navigation';
+
 
 
 
@@ -44,7 +44,7 @@ export default React.createClass({
 		// },
 		success: (loggedArg) => {
 				
-		
+			
 			this.state.user.set(loggedArg);
 			browserHistory.push('/stories');
 		},
