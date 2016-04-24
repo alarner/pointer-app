@@ -27,6 +27,7 @@ import Details from './components/pages/Details';
 import Login from './components/pages/Login';
 
 
+
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
@@ -40,3 +41,7 @@ const router = (
 );
 
 ReactDOM.render(router, document.getElementById('app'));
+
+
+
+
