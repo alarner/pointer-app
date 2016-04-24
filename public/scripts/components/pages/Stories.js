@@ -12,7 +12,7 @@ const StoryList = React.createClass ({
 	componentDidMount: function(){
 			// console.log('this.state=', this.state.stories);
 		Stories.on('update', () =>{
-			this.setState({Stories: Stories})
+			this.setState({Stories: Stories});
 		});
 		Stories.fetch();
 		console.log(Stories);
@@ -21,14 +21,18 @@ const StoryList = React.createClass ({
 	render: function(){
 		console.log(this.state);
 		console.log(Stories.models);
-		const storyRows = this.state.Stories.map((storyval, i, array)=>{
+		const categories = Stories.pluck('category');
+		console.log(categories);
+		const fables = Stories.where({category: 'fable'});
+		console.log(fables);
+		const fableRow = fables.map((fableval, i, array)=>{
 			return(
 				<CategoriesPreview
 					key={i}
-					title={storyval.get('title')}
-					name = {storyval.get('author')}
-					category = {storyval.get('category')}
-					coverimage={storyval.get('coverimage')} />
+					title={fableval.get('title')}
+					name = {fableval.get('author')}
+					category = {fableval.get('category')}
+					coverImage={fableval.get('coverImage')} />
 				);
 
 		});
@@ -36,10 +40,9 @@ const StoryList = React.createClass ({
 			<section className="page-stories">
 				<h3>Stories</h3>
 				<h1>Pick a Story</h1>
-				{storyRows}
+				{fableRow}
 			</section>
 			);
-		console.log({storyRows});
 	}
 });
 export default StoryList;
