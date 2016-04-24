@@ -39,9 +39,7 @@ export default React.createClass({
 			email: this.refs.email.value,
 			password: this.refs.password.value
 		},
-		// headers: {
-		// 	Accept: 'application/json'
-		// },
+
 		success: (loggedArg) => {
 				
 			
