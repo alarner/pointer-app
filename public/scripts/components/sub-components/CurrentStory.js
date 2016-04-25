@@ -4,19 +4,22 @@ import Model from '../../models/StoryModel.js';
 export default React.createClass({
 	
 	getInitialState: function () {
-	  	console.log('getInitialState');
 	  	
 		return {story: new Model({id: this.props.id})};
 	 },
 
 	componentDidMount: function () {
-		console.log(this.state);
 
 		this.state.story.fetch();
 		this.state.story.on('change', (updatedStory) => {
 			this.setState({story: updatedStory});
 
 		});	
+	},
+
+	componentWillUnmount: function () {
+		this.state.story.removeEventListener('change', (updatedStory));
+
 	},
 
 	render: function () {
