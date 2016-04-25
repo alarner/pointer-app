@@ -1,7 +1,5 @@
 import React from 'react';
-import Stories from '../../collections/StoryCollection';
 import Model from '../../models/StoryModel.js';
-import $ from 'jquery';
 
 export default React.createClass({
 	
