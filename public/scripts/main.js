@@ -33,7 +33,7 @@ const router = (
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
-			<Route path="/details" component={Details} />
+			<Route path="/stories/:storyId/details" component={Details} />
 			<Route path="/login" component={Login}/>
 		</Route>
 	</Router>
