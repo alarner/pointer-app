@@ -23,13 +23,13 @@ export default React.createClass({
 	render: function() {
 		if(this.state.user.get('id')) {
 			return (<nav>
-			<img src="../../images/pointer_logo.png" />
-			<a href="#" onClick={this.logout}>Logout</a>
+			<img src="/images/pointer_logo.png" />
+			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
 		</nav>);
 		} else {
 		return (<nav>
-			<Link to='/register'>Contact</Link>		
-			<Link to='/login'>Login</Link>
+			<Link className="nav-links" to='/register'>Contact</Link>		
+			<Link className="nav-links" to='/login'>Login</Link>
 		</nav>);
 		}
 	},
