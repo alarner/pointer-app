@@ -8,7 +8,8 @@ export default Backbone.Model.extend({
 		title: '',
 		author: '',
 		category: '',
-		coverImage: ''
+		coverImage: '',
+		description: ''
 	},
 	urlRoot: '/api/v1/story',
 	idAttribute: 'id'
