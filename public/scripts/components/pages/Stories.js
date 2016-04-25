@@ -1,6 +1,7 @@
 import React from 'react';
+import $ from 'jquery';
 import Stories from './../../collections/StoryCollection';
-import CategoriesPreview from './../sub-components/Categories-preview.js';
+import PicTitleThumb from './../sub-components/pic-title-thumb.js';
 
 
 const StoryList = React.createClass ({
@@ -20,29 +21,37 @@ const StoryList = React.createClass ({
 	},
 	render: function(){
 		console.log(this.state);
-		console.log(Stories.models);
 		const categories = Stories.pluck('category');
 		console.log(categories);
-		const fables = Stories.where({category: 'fable'});
-		console.log(fables);
-		const fableRow = fables.map((fableval, i, array)=>{
+		let eachCategory = [];
+		$.each(categories, function(i, el){
+		    if($.inArray(el, eachCategory) === -1)
+		    	eachCategory.push(el);
+		});
+		console.log(eachCategory);
+		const storyRows = eachCategory.map((category, i, array) => {
 			return(
-				<CategoriesPreview
-					key={i}
-					title={fableval.get('title')}
-					name = {fableval.get('author')}
-					category = {fableval.get('category')}
-					coverImage={fableval.get('coverImage')} />
-				);
-
+				<div className="categories-preview row">
+					<h3>{category}</h3>
+					
+					<button className="category-button"> See more {category}</button>
+				</div>);
 		});
 		return(
 			<section className="page-stories">
 				<h3>Stories</h3>
 				<h1>Pick a Story</h1>
-				{fableRow}
+				{storyRows}
 			</section>
 			);
 	}
 });
 export default StoryList;
+
+// <CategoriesPreview
+// 					key={i}
+// 					title={storyval.get('title')}
+// 					name = {storyval.get('author')}
+// 					category = {storyval.get('category')}
+// 					coverImage={storyval.get('coverImage')} />
+// 				);
