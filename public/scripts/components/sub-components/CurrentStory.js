@@ -7,7 +7,7 @@ export default React.createClass({
 	getInitialState: function () {
 	  	console.log('getInitialState');
 	  	console.log(this);
-		return {story: []};
+		return {story: {} };
 	 },
 
 	searchStory: function () {
@@ -44,10 +44,11 @@ export default React.createClass({
 
 			complete: function() {
 				console.log('I got a response');
-			},
+			}
 
 			
-		}
+		},
+
 		$.ajax(getStory);
 	},
 
