@@ -3,7 +3,7 @@ exports.seed = function(knex, Promise) {
 	var date =  new Date();
   return Promise.join(
     // Deletes ALL existing entries
-    // knex('table_name').del(), 
+    //knex('students').del(), 
 
     // Inserts seed entries
     knex('students').insert({id: 1, createdAt: date, firstName: 'Steven', lastName: 'Brust'}),
