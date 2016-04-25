@@ -30,18 +30,35 @@ const StoryList = React.createClass ({
 		});
 		console.log(eachCategory);
 		const storyRows = eachCategory.map((category, i, array) => {
+			const stories = this.state.Stories.filter((storyval, i, array) =>{
+				if (storyval.get('category') === category) {
+					return true;
+				} else {
+					return false;
+				}
+				}).map((storyval, i, array)=>{
+				return (
+					<PicTitleThumb
+					title={storyval.get('title')}
+					name = {storyval.get('author')}
+					category = {storyval.get('category')}
+					coverImage={storyval.get('coverImage')} />
+					);
+			});
 			return(
 				<div className="categories-preview row">
 					<h3>{category}</h3>
-					
+					{stories}
 					<button className="category-button"> See more {category}</button>
 				</div>);
 		});
+		console.log({storyRows});
 		return(
 			<section className="page-stories">
 				<h3>Stories</h3>
 				<h1>Pick a Story</h1>
 				{storyRows}
+				
 			</section>
 			);
 	}
