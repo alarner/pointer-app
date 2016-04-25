@@ -7,8 +7,6 @@ const StudentModel = Backbone.Model.extend({
 		createdAt: null,
 		updatedAt: null,
 		deletedAt: null,
-		userType: ''
-
 	},
 	idAttribute: 'id',
 
