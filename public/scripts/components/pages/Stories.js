@@ -6,12 +6,10 @@ import PicTitleThumb from './../sub-components/pic-title-thumb.js';
 
 const StoryList = React.createClass ({
 	getInitialState: function(){
-		//always returns an object
-		return{Stories:[]};
+		return{Stories: Stories};
 		console.log(this.state);
 	},
 	componentDidMount: function(){
-			// console.log('this.state=', this.state.stories);
 		Stories.on('update', () =>{
 			this.setState({Stories: Stories});
 		});
@@ -64,11 +62,3 @@ const StoryList = React.createClass ({
 	}
 });
 export default StoryList;
-
-// <CategoriesPreview
-// 					key={i}
-// 					title={storyval.get('title')}
-// 					name = {storyval.get('author')}
-// 					category = {storyval.get('category')}
-// 					coverImage={storyval.get('coverImage')} />
-// 				);
