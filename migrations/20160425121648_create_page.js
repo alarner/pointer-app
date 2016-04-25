@@ -7,7 +7,10 @@ exports.up = function(knex, Promise) {
 
 		t.string('image').notNull();
 		t.text('body').notNull();
-		
+		t.integer('storyId')
+			.notNull()
+			.references('id')
+			.inTable('stories');
 	});
 };
 
