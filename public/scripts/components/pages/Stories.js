@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Stories from './../../collections/StoryCollection';
-import PicTitleThumb from './../sub-components/pic-title-thumb.js';
+import PicTitleThumb from './../sub-components/PicTitleThumb.js';
 
 
 const StoryList = React.createClass ({
@@ -21,7 +21,6 @@ const StoryList = React.createClass ({
 		    if($.inArray(el, eachCategory) === -1)
 		    	eachCategory.push(el);
 		});
-		console.log(eachCategory);
 		const storyRows = eachCategory.map((category, i, array) => {
 			const stories = this.state.Stories.filter((storyval, i, array) =>{
 				if (storyval.get('category') === category) {
