@@ -23,6 +23,7 @@ import App from './components/App';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Stories from './components/pages/Stories';
+import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
 
@@ -34,6 +35,7 @@ const router = (
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
+			<Route path="/stories/:storyId/read" component={Read} />
 			<Route path="/details" component={Details} />
 			<Route path="/login" component={Login}/>
 		</Route>

@@ -6,10 +6,21 @@ exports.up = function(knex, Promise) {
 		t.dateTime('deletedAt').nullable();
 
 		t.dateTime('finishedAt').notNull();
+		t.integer('userId')
+			.notNull()
+			.references('id')
+			.inTable('users');
+		t.integer('studentId')
+			.notNull()
+			.references('id')
+			.inTable('students');
+		t.integer('storyId')
+			.notNull()
+			.references('id')
+			.inTable('stories');
 	});
 };
 
 exports.down = function(knex, Promise) {
 	return knex.schema.dropTable('stories_read');
 };
-

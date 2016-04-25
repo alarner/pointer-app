@@ -9,17 +9,13 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function() {
-		// this.state.students.fetch();
-		console.log(this.state)
 		students.on('update', () => {
 			this.setState({students: students});
 		});
 		students.fetch();
-		console.log(this.state.students);
 	},
 	render: function() {
 		const allStudents = this.state.students.map((student, index, array) => {
-			console.log(student)
 		return (
 			<option value="Student" key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
 			)

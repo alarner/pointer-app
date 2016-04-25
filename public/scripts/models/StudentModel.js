@@ -7,8 +7,7 @@ export default Backbone.Model.extend({
 		lastName:'',
 		createdAt: null,
 		updatedAt: null,
-		deletedAt: null
-
+		deletedAt: null,
 	},
 	urlRoot: '/api/v1/student',
 	idAttribute: 'id'
