@@ -11,16 +11,21 @@ export default React.createClass({
 	componentDidMount: function () {
 
 		this.state.story.fetch();
-		this.state.story.on('change', (updatedStory) => {
-			this.setState({story: updatedStory});
+		this.state.story.on('change', this.modelChange); 
 
-		});	
+		
 	},
 
 	componentWillUnmount: function () {
-		this.state.story.removeEventListener('change', (updatedStory));
+		this.state.story.off('change', this.modelChange);
 
 	},
+
+	modelChange: function (updatedStory) {
+		this.setState({story: updatedStory});
+	},
+
+
 
 	render: function () {
 		return (
