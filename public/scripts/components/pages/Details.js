@@ -1,5 +1,9 @@
 import React from 'react';
+
 import {Link} from 'react-router';
+
+import CurrentStory from '../sub-components/CurrentStory.js';
+
 
 import students from './../../collections/StudentsCollection.js'; 
 
@@ -14,7 +18,6 @@ export default React.createClass({
 			this.setState({students: students});
 		});
 		students.fetch();
-		console.log(this.state.students);
 	},
 	render: function() {
 
@@ -27,6 +30,7 @@ export default React.createClass({
 		return (
 			<section className="page-details">
 				<h1>Details</h1>
+				<CurrentStory id={this.props.params.storyId}/>
 				<div className="student-dropdown-component">
 					<p className="student-prompt">Which student is participating?</p>
 					<div align="center">
