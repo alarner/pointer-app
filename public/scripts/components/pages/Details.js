@@ -40,7 +40,7 @@ export default React.createClass({
 						</select>
 					</div>
 				</div>
-				<Link className=".button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
+				<Link className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
 			</section>
 		);
 	}
