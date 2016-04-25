@@ -1,18 +1,17 @@
 import Backbone from 'backbone';
 
-const StudentModel = Backbone.Model.extend({
+export default Backbone.Model.extend({
 	defaults:{
 		firstName:'',
 		lastName:'',
 		createdAt: null,
 		updatedAt: null,
-		deletedAt: null,
+		deletedAt: null
 	},
-	idAttribute: 'id',
-
-	rootUrl: '/api/v1/student' 
+	urlRoot: '/api/v1/student',
+	idAttribute: 'id'
 });
 
-export default  new StudentModel();
+
 
 
