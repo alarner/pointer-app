@@ -18,20 +18,19 @@ export default React.createClass({
 		console.log(this.state.students);
 	},
 	render: function() {
-		// const allStudents = this.state.students.map(student, index, array) => {
-
-		// 	}
+		const allStudents = this.state.students.map((student, index, array) => {
+			console.log(student)
+		return (
+			<option value="Student" key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
+			)
+		});
 		return (
 		<div className="student-dropdown-component">
 			<p className="student-prompt">Which student is participating?</p>
 			<div align="center">
 				<select name="mydropdown">
 					<option value="Pick">Pick a student</option>
-					<option value="Student">Bobby Blobby </option>
-					<option value="Student">Poppy Sloppy</option>
-					<option value="Student">Rainbow Brite</option>
-					<option value="Student">Jimminy Crickey</option>
-					<option value="Student">Jerri Blank</option>
+					{allStudents}
 				</select>
 			</div>
 		</div>
