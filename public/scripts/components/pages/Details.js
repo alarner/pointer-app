@@ -1,12 +1,7 @@
 import React from 'react';
-
 import {Link} from 'react-router';
-
 import CurrentStory from '../sub-components/CurrentStory.js';
-
-
 import students from './../../collections/StudentsCollection.js'; 
-
 export default React.createClass({
 	getInitialState: function() {
 		return {
