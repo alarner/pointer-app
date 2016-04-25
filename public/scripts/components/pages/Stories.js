@@ -31,6 +31,7 @@ const StoryList = React.createClass ({
 				}).map((storyval, i, array)=>{
 				return (
 					<PicTitleThumb
+					key = {i}
 					title={storyval.get('title')}
 					name = {storyval.get('author')}
 					category = {storyval.get('category')}
@@ -38,7 +39,7 @@ const StoryList = React.createClass ({
 					);
 			});
 			return(
-				<div className="categories-preview row">
+				<div className="categories-preview row" key={i}>
 					<h3>{category}</h3>
 					{stories}
 					<button className="category-button"> See more {category}</button>
