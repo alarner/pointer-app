@@ -31,7 +31,7 @@ export default React.createClass({
 				<h1>{this.state.story.get('title')}</h1>
 				<div>
 					<img src={this.state.story.get('coverImage')}/>
-					<p>This is a sample description of a story.</p>
+					<p>{this.state.story.get('description')}</p>
 				</div>
 			</section> 
 		);
