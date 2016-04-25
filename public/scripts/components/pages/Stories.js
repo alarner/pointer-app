@@ -7,20 +7,15 @@ import PicTitleThumb from './../sub-components/pic-title-thumb.js';
 const StoryList = React.createClass ({
 	getInitialState: function(){
 		return{Stories: Stories};
-		console.log(this.state);
 	},
 	componentDidMount: function(){
 		Stories.on('update', () =>{
 			this.setState({Stories: Stories});
 		});
 		Stories.fetch();
-		console.log(Stories);
-		console.log('If you can read this, you got to componentDidMount.');
 	},
 	render: function(){
-		console.log(this.state);
 		const categories = Stories.pluck('category');
-		console.log(categories);
 		let eachCategory = [];
 		$.each(categories, function(i, el){
 		    if($.inArray(el, eachCategory) === -1)
@@ -50,7 +45,6 @@ const StoryList = React.createClass ({
 					<button className="category-button"> See more {category}</button>
 				</div>);
 		});
-		console.log({storyRows});
 		return(
 			<section className="page-stories">
 				<h3>Stories</h3>
