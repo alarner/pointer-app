@@ -13,19 +13,13 @@ export default React.createClass({
 		console.log(this.state);
 
 		this.state.story.fetch();
-
 		this.state.story.on('change', (updatedStory) => {
 			this.setState({story: updatedStory});
 
-		});
-
-		
+		});	
 	},
 
-
 	render: function () {
-		
-
 		return (
 			<section>
 				<h1>{this.state.story.get('title')}</h1>
