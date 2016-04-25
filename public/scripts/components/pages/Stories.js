@@ -50,7 +50,6 @@ const StoryList = React.createClass ({
 				<h3>Stories</h3>
 				<h1>Pick a Story</h1>
 				{storyRows}
-				
 			</section>
 			);
 	}
