@@ -5,11 +5,24 @@
 $color-main-blue: #2654bc;
 $color-main-red: #ff2e51;
 $color-main-green: #8fff92;
+$color-dark-grey: #3f4042;
 
 body {
 	font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+	color: $color-dark-grey;
 }
 
 h1, h2, h3 {
 	font-family: 'Gochi Hand', cursive;
+}
+
+h1 {
+	color: $color-main-blue;
+}
+
+main {
+	margin: 2em;
+	padding: 0 2em;
+	border: 6px solid lighten($color-main-green, 10%);
+	border-radius: 20px;
 }
