@@ -13,11 +13,13 @@ export default React.createClass({
 			this.setState({students: students});
 		});
 		students.fetch();
+		console.log(this.state.students);
 	},
 	render: function() {
 		const allStudents = this.state.students.map((student, index, array) => {
+			console.log(student)
 		return (
-			<option value="Student" key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
+			<option value={student.get('id')} key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
 			)
 		});
 		return (
