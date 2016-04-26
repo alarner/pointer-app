@@ -1,25 +1,31 @@
-// color variables
-$color-main-blue: #2654bc;
-$color-main-red: #ff2e51;
-$color-main-green: #8fff92;
-$color-dark-grey: #3f4042;
-
-body {
-	font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
-	color: $color-dark-grey;
-}
-
-h1, h2, h3 {
-	font-family: 'Gochi Hand', cursive;
-}
+@import 'variables';
 
 h1 {
+	font-family: 'Gochi Hand', cursive;
 	color: $color-main-blue;
 }
+
+// page components
+body {
+	font-family: 'Nobile' Helvetica, Arial, sans-serif;
+	color: $color-dark-grey; 
+	font-size: 18px;
+}
+
 
 main {
 	margin: 2em;
 	padding: 0 2em;
-	border: 6px solid lighten($color-main-green, 10%);
-	border-radius: 20px;
+}
+
+// navigation styles
+nav {
+  overflow: hidden;
+  line-height: 86px;
+}
+img.logo {float: left;}
+
+.nav-links {
+	float: right;
+	margin-left: 10px;
 }
