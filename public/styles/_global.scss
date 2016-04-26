@@ -1,31 +1,69 @@
 @import 'variables';
 
+// typography
 h1 {
 	font-family: 'Gochi Hand', cursive;
 	color: $color-main-blue;
 }
 
+a {
+	text-decoration: none;
+}
+
 // page components
 body {
 	font-family: 'Nobile' Helvetica, Arial, sans-serif;
-	color: $color-dark-grey; 
+	color: $color-body-text; 
 	font-size: 18px;
 }
 
+nav, section, footer {
+	padding-left: 2em;
+	padding-right: 2em;
+}
 
-main {
-	margin: 2em;
-	padding: 0 2em;
+section {
+	margin-top: 1em;
 }
 
 // navigation styles
 nav {
   overflow: hidden;
-  line-height: 86px;
+  background-color: $color-light-grey;
+  border-bottom: 1px solid #d3d3d3;
 }
+
 img.logo {float: left;}
 
 .nav-links {
 	float: right;
 	margin-left: 10px;
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	margin-top: 24px;
+	color: $color-dark-grey;
+	background-color: white;
+	text-align: center;
+	line-height: 38px;
+	text-decoration: none;
+	white-space: nowrap;
+	border-radius: 2px;
+	border: 1px solid $color-main-green;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.nav-links:hover {
+	color: #5b5b5d;
+}
+
+// footer styles
+
+footer {
+	border-top: 1px solid #d3d3d3;
+	background-color: $color-light-grey;
+	font-size: 0.75em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
