@@ -3,6 +3,8 @@
 @import 'log-in';
 @import 'navigation';
 @import 'category';
-
-// google fonts
-@import url(https://fonts.googleapis.com/css?family=Gochi+Hand|Titillium+Web:400,700,200);
+@import 'node_modules/rayon/src/styles/rayon';
+@import 'node_modules/rayon/src/styles/theme'; 
+@import 'navigation';
+@import 'category';
+@import 'footer';

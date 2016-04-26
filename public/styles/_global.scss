@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // google fonts
 @import url(https://fonts.googleapis.com/css?family=Gochi+Hand|Titillium+Web:400,700,200);
 
@@ -20,9 +21,32 @@ h1 {
 	color: $color-main-blue;
 }
 
+=======
+// typography
+@import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
+@import url(https://fonts.googleapis.com/css?family=Nobile:400,700);
+
+h1 {
+	font-family: 'Gochi Hand', cursive;
+	color: $color-main-blue;
+}
+
+// page components
+body {
+	font-family: 'Nobile' Helvetica, Arial, sans-serif;
+	color: $color-dark-grey; 
+	font-size: 18px;
+}
+
+
+>>>>>>> 9c33e96818afc19cdff94cbde76369d57415dc62
 main {
 	margin: 2em;
 	padding: 0 2em;
 	border: 6px solid lighten($color-main-green, 10%);
 	border-radius: 20px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9c33e96818afc19cdff94cbde76369d57415dc62
