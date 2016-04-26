@@ -1,8 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
 import Rayon from 'rayon';
 import students from './../../collections/StudentsCollection.js'; 
-
 
 export default React.createClass({
 	getInitialState: function() {
@@ -18,7 +18,9 @@ export default React.createClass({
 		students.fetch();
 	},
 	render: function() {
+
 		const allStudents = this.state.students.map((student, index, array) => {
+
 		return (
 			<option value={student.get('id')} key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
 			);
@@ -36,6 +38,7 @@ export default React.createClass({
 						</select>
 					</div>
 				</div>
+				<Link className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
                 <a href= '#' onClick={this.openModal}>Add a New Student</a>
                  	<Rayon isOpen={this.state.modalVisible} onClose={this.closeModal}>
                      	<form className="add-student" onSubmit={this.addStudent}>
@@ -72,4 +75,5 @@ export default React.createClass({
      }
 
 });
+
 
