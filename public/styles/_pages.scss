@@ -1,10 +1,6 @@
-nav {
-  overflow: hidden;
-  line-height: 86px;
+section.page-details img {
+	min-width: 100%;
+	float: left;
+	border: 10px solid #ccc;
 }
-img.logo {float: left;}
 
-.nav-links {
-	float: right;
-	margin-left: 10px;
-}
