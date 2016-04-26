@@ -7,17 +7,23 @@ exports.up = function(knex, Promise) {
 
 		t.dateTime('finishedAt').notNull();
 		t.integer('userId')
+			.unsigned()
 			.notNull()
 			.references('id')
-			.inTable('users');
+			.inTable('users')
+			.onDelete('CASCADE');
 		t.integer('studentId')
+			.unsigned()
 			.notNull()
 			.references('id')
-			.inTable('students');
+			.inTable('students')
+			.onDelete('CASCADE');
 		t.integer('storyId')
+			.unsigned()
 			.notNull()
 			.references('id')
-			.inTable('stories');
+			.inTable('stories')
+			.onDelete('CASCADE');
 	});
 };
 
