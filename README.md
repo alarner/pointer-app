@@ -8,6 +8,13 @@
 1. `npm run dev` ... fill in db credentials and session
 1. `knex migrate:latest`
 
+## To update...
+
+1. `git pull origin master`
+2. `knex migrate:lastest`
+3. `knex seed:run`
+4. `npm install` 
+
 ## Coding Guidelines
 
 ### Branching
