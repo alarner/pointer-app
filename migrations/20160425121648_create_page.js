@@ -8,9 +8,11 @@ exports.up = function(knex, Promise) {
 		t.string('image').notNull();
 		t.text('body').notNull();
 		t.integer('storyId')
+			.unsigned()
 			.notNull()
 			.references('id')
-			.inTable('stories');
+			.inTable('stories')
+			.onDelete('CASCADE');
 	});
 };
 
