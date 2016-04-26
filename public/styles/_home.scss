@@ -10,7 +10,12 @@
 	.videoblock{
 		padding-top: 1.5em;
 		overflow: hidden;
-		button {
+		.fb-like{
+			margin: 0.05em;
+			float: right;
+		}
+		.twitter-share-button{
+			margin: 0.15em;
 			float: right;
 		}
 	}
