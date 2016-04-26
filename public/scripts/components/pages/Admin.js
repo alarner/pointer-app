@@ -26,8 +26,9 @@ export default React.createClass({
 		},
 
 		success: (loggedArg) => {
-						
+			console.log(this.state.user.set(loggedArg));			
 			this.state.user.set(loggedArg);
+			
 		},
 		error: (errorArg) => {
 				
