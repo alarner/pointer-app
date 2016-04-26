@@ -17,8 +17,6 @@ exports.seed = function(knex, Promise) {
 			.then(storyId => {
 				storyId = storyId[0];
 				return Promise.join(
-					//Deletes
-
 					 knex('pages').insert({createdAt: date, image: 'https://s-media-cache-ak0.pinimg.com/736x/0b/ec/1e/0bec1e70af33690796667d17bdadbd3a.jpg', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor bibendum nisi eget malesuada. Aliquam erat volutpat. Duis pellentesque ultrices metus rutrum congue.', storyId: storyId}),
 					 knex('pages').insert({createdAt: date, image: 'http://40.media.tumblr.com/tumblr_m6vujhAdER1raymsho1_500.jpg', body: 'Nutella breeds love', storyId: storyId})
 				);
