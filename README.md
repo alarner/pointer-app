@@ -8,6 +8,13 @@
 1. `npm run dev` ... fill in db credentials and session
 1. `knex migrate:latest`
 
+## To update...
+
+1. `git pull origin master`
+2. `knex migrate:lastest`
+3. `knex seed:run`
+4. `npm install` 
+
 ## Coding Guidelines
 
 ### Branching
@@ -72,5 +79,12 @@
 ![](./Pointer-App.png)
 ## Contributors
 afmonty
+
+(Jen Udan) https://github.com/judan
+(Dana Lachman) https://github.com/tinydinosaurs
+(Will Cook)https://github.com/willcook4code
+(Dan Buda) https://github.com/DanBuda11
+(Nate Hawthorne) https://github.com/NJHawthorne
+(Haythem  Hammour) https://github.com/hammour
 
 *Add your GitHub profile here*
