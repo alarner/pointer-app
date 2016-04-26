@@ -1,6 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
+@import url(https://fonts.googleapis.com/css?family=Nobile:400,700);
+
 @import '../../node_modules/skeleton-scss/scss/skeleton';
 @import 'global';
 @import 'log-in';
+@import 'navigation';
+@import 'category';
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/rayon/src/styles/theme'; 
 @import 'navigation';

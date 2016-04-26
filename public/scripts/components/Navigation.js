@@ -23,6 +23,15 @@ export default React.createClass({
 	render: function() {
 		if(this.state.user.get('id')) {
 			return (<nav>
+<<<<<<< HEAD
+			<img src="../../images/pointer_logo.png" />
+			<a href="#" onClick={this.logout}>Logout</a>
+		</nav>);
+		} else {
+		return (<nav>
+			<Link to='/register'>Contact</Link>		
+			<Link to='/login'>Login</Link>
+=======
 			<img src="/images/pointer_logo.png" />
 			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
 		</nav>);
@@ -31,6 +40,7 @@ export default React.createClass({
 			<img src="/images/pointer_logo.png" />
 			<Link className="nav-links" to='/contact'>Contact</Link>		
 			<Link className="nav-links" to='/login'>Login</Link>
+>>>>>>> 9c33e96818afc19cdff94cbde76369d57415dc62
 		</nav>);
 		}
 	},
@@ -45,4 +55,7 @@ export default React.createClass({
 		browserHistory.push('/');
 	}
 });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9c33e96818afc19cdff94cbde76369d57415dc62
