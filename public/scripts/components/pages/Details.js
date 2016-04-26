@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
 import Rayon from 'rayon';
 import students from './../../collections/StudentsCollection.js';
@@ -80,20 +80,20 @@ export default React.createClass({
      },
      updateStoryRead: function(e) {
      	e.preventDefault();
-     	console.log(this.props.params.storyId);
-     	console.log(this.state.currentStudent);
+     	let studentId = this.state.currentStudent;
+     	let storyId = this.props.params.storyId;
      	$.ajax({
      		type: 'POST',
  			url: 'api/v1/storyread',
 			data: {
-				studentId: this.state.currentStudent,
-				storyId: this.props.params.storyId
+				studentId: studentId,
+				storyId: storyId
 			},
 			success: function() {
-				console.log('Student added');
+				browserHistory.push('/stories/'+storyId+'/read');
 			},
 			error: function(error) {
-				
+				console.log('You got an error: '+error);
 			}
      	});
      }
