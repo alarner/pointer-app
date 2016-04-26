@@ -26,5 +26,7 @@
 }
 .directionals-container {
 	margin: 0 auto;
-	width: 25em;
+	min-width: 25em;
+	max-width: 27em;
+	text-align: center;
 }
