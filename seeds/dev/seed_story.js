@@ -4,8 +4,8 @@ exports.seed = function(knex, Promise) {
   return Promise.join(
 
     // Deletes ALL existing entries
-    knex('pages').del(),
-   knex('stories').del(), 
+   //  knex('pages').del(),
+   // knex('stories').del(), 
 
     // Inserts seed entries
     knex('stories').insert({id: 1, createdAt: date, title: 'Jess and her Avocado Adventure', author: 'Casanda Katydid', coverImage: 'https://s-media-cache-ak0.pinimg.com/736x/0b/ec/1e/0bec1e70af33690796667d17bdadbd3a.jpg', category: 'Fables', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor bibendum nisi eget malesuada. Aliquam erat volutpat. Duis pellentesque ultrices metus rutrum congue.'}),
