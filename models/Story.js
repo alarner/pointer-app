@@ -6,7 +6,7 @@ module.exports = bookshelf.model('story', {
 	storiesRead: function() {
 		return this.hasMany('StoryRead', 'storyId');
 	},
-	page: function() {
+	pages: function() {
 		return this.hasMany('Page', 'storyId');
 	}
 });

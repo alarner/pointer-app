@@ -12,23 +12,35 @@ export default React.createClass({
 		this.state.story.on('change', (storyData)=> {
 			this.setState({story: this.state.story});
 		});
-		this.state.story.fetch({error: (model, error) => {
-			this.setState({error: error.responseJSON.message});
-		}});
+		this.state.story.fetch({
+			data: {withRelated: ['pages']},
+			error: (model, error) => {
+				this.setState({error: error.responseJSON.message});
+			}
+		});
 	},
 	render: function() {
-		if(this.state.error === '') {
+		if(this.state.error) {
+			return (
+
+				<section className="page-read">
+					<h1>{this.state.error}</h1>
+				</section>
+			);
+			
+		} else if (!this.state.story.get('title')){
+			return (
+				<h1>Loading</h1>
+				);	
+		}
+
+		else {
 			return (
 				<section className="page-read">
 					<h1>Read</h1>
 				</section>
 			);
-		} else {
-			return (
-				<section className="page-read">
-					<h1>{this.state.error}</h1>
-				</section>
-			);
+
 		}
 	}
 });
