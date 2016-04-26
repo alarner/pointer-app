@@ -9,7 +9,8 @@ exports.up = function(knex, Promise) {
 		t.string('title').notNull();
 		t.string('author').nullable();
 		t.string('coverImage').nullable();
-		t.enu('category', ['fable']).nullable();
+		t.string('description').nullable;
+		t.string('category', ['Fables', 'Childrens', 'Fairytales', 'Animals']).nullable();
 	});
 };
 

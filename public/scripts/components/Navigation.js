@@ -28,7 +28,8 @@ export default React.createClass({
 		</nav>);
 		} else {
 		return (<nav>
-			<Link className="nav-links" to='/register'>Contact</Link>		
+			<img src="/images/pointer_logo.png" />
+			<Link className="nav-links" to='/contact'>Contact</Link>		
 			<Link className="nav-links" to='/login'>Login</Link>
 		</nav>);
 		}
