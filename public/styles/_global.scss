@@ -1,7 +1,4 @@
 @import 'variables';
-// typography
-@import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
-@import url(https://fonts.googleapis.com/css?family=Nobile:400,700);
 
 h1 {
 	font-family: 'Gochi Hand', cursive;
@@ -15,8 +12,6 @@ body {
 	font-size: 18px;
 }
 
-
-main {
-	margin: 2em;
+nav, section, footer {
 	padding: 0 2em;
 }
