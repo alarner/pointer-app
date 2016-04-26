@@ -2,8 +2,7 @@ import React from 'react';
 import CurrentStory from '../sub-components/CurrentStory.js';
 import Rayon from 'rayon';
 import students from './../../collections/StudentsCollection.js'; 
-import $ from 'jquery';
-import {hashHistory} from 'react-router';
+
 
 export default React.createClass({
 	getInitialState: function() {
