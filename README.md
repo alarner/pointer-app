@@ -80,4 +80,11 @@
 ## Contributors
 afmonty
 
+(Jen Udan) https://github.com/judan
+(Dana Lachman) https://github.com/tinydinosaurs
+(Will Cook)https://github.com/willcook4code
+(Dan Buda) https://github.com/DanBuda11
+(Nate Hawthorne) https://github.com/NJHawthorne
+(Haythem  Hammour) https://github.com/hammour
+
 *Add your GitHub profile here*

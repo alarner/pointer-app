@@ -19,6 +19,16 @@ body {
 main {
 	margin: 2em;
 	padding: 0 2em;
-	border: 6px solid lighten($color-main-green, 10%);
-	border-radius: 20px;
+}
+
+// navigation styles
+nav {
+  overflow: hidden;
+  line-height: 86px;
+}
+img.logo {float: left;}
+
+.nav-links {
+	float: right;
+	margin-left: 10px;
 }
