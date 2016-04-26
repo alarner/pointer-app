@@ -15,11 +15,14 @@ let _ = require('lodash');
 let flash = require('./lib/middleware/flash-messages');
 let versions = require('./lib/middleware/versions');
 let passportSetup = require('./lib/auth/passport-setup');
+// let knexLogger = require('knex-logger');
 
 // let favicon = require('serve-favicon');
 // let logger = require('morgan');
 
 let app = express();
+
+// app.use(knexLogger(global.knex));
 
 let sessionConfig = _.extend({}, config.session, {store: new RedisStore(config.session.store || {})});
 app.use(session(sessionConfig));
