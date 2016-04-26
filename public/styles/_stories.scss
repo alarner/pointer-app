@@ -1,0 +1,43 @@
+.story-thumb-box {
+
+	.thumb-pic-container {
+		height: 10em;
+		display: block;
+		border: 2px solid $color-main-blue;
+
+		.story-thumb-pic {
+			margin: 0 auto;
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+
+		}
+	}
+
+	.story-thumb-title {
+		text-decoration: none;
+		font-size: 2rem;
+		color: $color-main-blue;
+
+		.p-thumb-title {
+			margin: 0;
+		}
+
+	}
+
+	i {
+		color: $color-main-blue;
+	}
+
+}
+
+.categories-preview {
+	border-bottom: 4px solid $color-main-green;
+	padding: 2em 0;
+}
+
+.stories-button {
+	margin: 1em;
+	float: right;
+	clear: left;
+}
