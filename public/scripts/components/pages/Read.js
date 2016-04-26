@@ -49,7 +49,7 @@ export default React.createClass({
 						<button className="directionals" onClick={this.previousPage}>Back</button>
 						<button className="directionals" onClick={this.nextPage}>Forward</button>
 					</div>
-					<h1>Pg. {this.state.currentPage}</h1>
+					<h1>Pg. {this.state.currentPage+1}</h1>
 				</section>
 			);
 
