@@ -45,9 +45,11 @@ export default React.createClass({
 					<h1>{this.state.story.get('title')}</h1>
 					<img className="page-pic" src={this.state.story.get('pages')[this.state.currentPage].image}/>
 					<p className="page-text">{this.state.story.get('pages')[this.state.currentPage].body}</p>
-					<button className="directionals" onClick={this.previousPage}>Previous</button>
-					<h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
-					<button className="directionals" onClick={this.nextPage}>Next</button>
+					<div className="directionals-container">
+						<button className="directionals" onClick={this.previousPage}>Previous</button>
+						<h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
+						<button className="directionals" onClick={this.nextPage}>Next</button>
+					</div>
 				</section>
 			);
 
