@@ -4,19 +4,24 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section className="page-home container">
-				<div className="row">
-        			<div className="one-half column">
-            			<h4>Video box below</h4>
+        			<div className="one-half column videoblock">
+            			<embed scale="aspect" width="380" height="214" src="https://www.youtube.com/embed/Fo-7bR9i_ms" frameborder="0" allowfullscreen></embed>
+            			<button>Like</button>
+            			<button>Twitter</button>
 					</div>
-        			<div className="one-half column">
-						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-						Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        			<div className="one-half column textblock">
+        				<h3>Boost your child's ability to read</h3>
+						<p>As your child grows, there is a window of opportunity to shape their future in many ways. 
+						Teaching them to read builds a critical educational foundation. With Pointer, children stay 
+						engaged with your voice, learning better and faster. They feel more connected and get more 
+						pleasure and meaning from reading.</p>
+						<span>Sign up for early access.</span>
 						<form>
 							<input type='email' placeholder='email'/>
-							<input type='button' placeholder='Sign up for early access'/>
+							<button> Sign me up!</button>
 						</form>
 					</div>
-				</div>
+
 			</section>
 		);
 	}

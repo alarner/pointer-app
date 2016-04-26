@@ -1,7 +1,39 @@
 @import 'variables';
+@import 'global';
 
 .page-home {
-	
+	line-height: 1.3em;
+	section{
+		padding: 0 2em;
+
 	}
+	.videoblock{
+		padding-top: 1.5em;
+		overflow: hidden;
+		button {
+			float: right;
+		}
+	}
+	.textblock {
+		input{
+			width: 15em;
+		}
+		button {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+	}
+	p {
+		margin-bottom: 0.5em;
+	}
+	h3{
+		font-family: 'Gochi Hand', cursive;
+		color: $color-main-blue;
+		margin-bottom: 0em;
+	}
+	button{
+		margin: 0.5em;
+	}
+}
 		
 
