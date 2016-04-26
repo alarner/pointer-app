@@ -1,21 +1,19 @@
-// color variables
-$color-main-blue: #2654bc;
-$color-main-red: #ff2e51;
-$color-main-green: #8fff92;
-$color-dark-grey: #3f4042;
-
-body {
-	font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
-	color: $color-dark-grey;
-}
-
-h1, h2, h3 {
-	font-family: 'Gochi Hand', cursive;
-}
+// typography
+@import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
+@import url(https://fonts.googleapis.com/css?family=Nobile:400,700);
 
 h1 {
+	font-family: 'Gochi Hand', cursive;
 	color: $color-main-blue;
 }
+
+// page components
+body {
+	font-family: 'Nobile' Helvetica, Arial, sans-serif;
+	color: $color-dark-grey; 
+	font-size: 18px;
+}
+
 
 main {
 	margin: 2em;
