@@ -2,13 +2,15 @@ import React from 'react';
 import {Link} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
 import Rayon from 'rayon';
-import students from './../../collections/StudentsCollection.js'; 
+import students from './../../collections/StudentsCollection.js';
+import $ from 'jquery';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			students: students,
-			modalVisible: false
+			modalVisible: false,
+			currentStudent: ''
 		};
 	},
 	componentDidMount: function() {
@@ -22,7 +24,7 @@ export default React.createClass({
 		const allStudents = this.state.students.map((student, index, array) => {
 
 		return (
-			<option value={student.get('id')} key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
+			<option ref="student" value={student.get('id')} key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
 			);
 		});
 		return (
@@ -32,13 +34,13 @@ export default React.createClass({
 				<div className="student-dropdown-component">
 					<p className="student-prompt">Which student is participating?</p>
 					<div align="center">
-						<select name="mydropdown">
+						<select name="mydropdown" onChange={this.selectChange}>
 							<option value="Pick">Pick a student</option>
 							{allStudents}
 						</select>
 					</div>
 				</div>
-				<Link className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
+				<Link onClick={this.updateStoryRead}className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
                 <a href= '#' onClick={this.openModal}>Add a New Student</a>
                  	<Rayon isOpen={this.state.modalVisible} onClose={this.closeModal}>
                      	<form className="add-student" onSubmit={this.addStudent}>
@@ -72,8 +74,29 @@ export default React.createClass({
     	});
     	this.closeModal();
     	
+     },
+     selectChange: function(e) {
+     	this.setState({currentStudent: e.target.value});
+     },
+     updateStoryRead: function(e) {
+     	e.preventDefault();
+     	console.log(this.props.params.storyId);
+     	console.log(this.state.currentStudent);
+     	$.ajax({
+     		type: 'POST',
+ 			url: 'api/v1/storyread',
+			data: {
+				studentId: this.state.currentStudent,
+				storyId: this.props.params.storyId
+			},
+			success: function() {
+				console.log('Student added');
+			},
+			error: function(error) {
+				
+			}
+     	});
      }
-
 });
 
 
