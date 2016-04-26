@@ -2,7 +2,6 @@ import Backbone from 'backbone';
 
 export default Backbone.Model.extend({
 	defaults: {
-		id: null,
 		createdAt: null,
 		updatedAt: null,
 		title: '',

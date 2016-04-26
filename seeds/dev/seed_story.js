@@ -4,7 +4,8 @@ exports.seed = function(knex, Promise) {
   return Promise.join(
 
     // Deletes ALL existing entries
-   //knex('stories').del(), 
+    knex('pages').del(),
+   knex('stories').del(), 
 
     // Inserts seed entries
     knex('stories').insert({id: 1, createdAt: date, title: 'Jess and her Avocado Adventure', author: 'Casanda Katydid', coverImage: 'https://s-media-cache-ak0.pinimg.com/736x/0b/ec/1e/0bec1e70af33690796667d17bdadbd3a.jpg', category: 'Fables', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor bibendum nisi eget malesuada. Aliquam erat volutpat. Duis pellentesque ultrices metus rutrum congue.'}),
@@ -18,7 +19,7 @@ exports.seed = function(knex, Promise) {
   ).then(() => {
   	return Promise.join(
   		//Deletes
-  		//knex('page').del(),
+
   		 knex('pages').insert({id: 1, createdAt: date, image: 'https://s-media-cache-ak0.pinimg.com/736x/0b/ec/1e/0bec1e70af33690796667d17bdadbd3a.jpg', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor bibendum nisi eget malesuada. Aliquam erat volutpat. Duis pellentesque ultrices metus rutrum congue.', storyId: 1}),
   		 knex('pages').insert({id: 2, createdAt: date, image: 'http://40.media.tumblr.com/tumblr_m6vujhAdER1raymsho1_500.jpg', body: 'Nutella breeds love', storyId: 1})
   	);

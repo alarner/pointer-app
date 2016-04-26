@@ -2,7 +2,6 @@ import Backbone from 'backbone';
 
 const UserModel = Backbone.Model.extend ({
 	defaults:{
-		id: null,
 		firstName: '',
 		lastName: '',
 		email: '',

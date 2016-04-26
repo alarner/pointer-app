@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
+import Rayon from 'rayon';
 import students from './../../collections/StudentsCollection.js'; 
+
 export default React.createClass({
 	getInitialState: function() {
 		return {
-			students: students
+			students: students,
+			modalVisible: false
 		};
 	},
 	componentDidMount: function() {
@@ -36,7 +39,41 @@ export default React.createClass({
 					</div>
 				</div>
 				<Link className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
-			</section>
-		);
-	}
+                <a href= '#' onClick={this.openModal}>Add a New Student</a>
+                 	<Rayon isOpen={this.state.modalVisible} onClose={this.closeModal}>
+                     	<form className="add-student" onSubmit={this.addStudent}>
+							<label className="add-student-fName-label">First Name</label>
+							<input type = "text" ref = "fName" placeholder = "First Name"></input>
+							<label className="add-student-lName-label">Last Name</label>
+							<input type = "text" ref = "lName" placeholder = "Last Name"></input>
+							<button>Submit</button>
+						</form>
+						<footer>
+                        	<button onClick={this.closeModal}>Close</button>
+                    	</footer>
+                 	</Rayon>
+            	</section>
+         );
+     },
+    openModal: function() {
+        this.setState({
+            modalVisible: true
+        });
+    },
+    closeModal: function() {
+        this.setState({
+            modalVisible: false
+        });
+    },
+    addStudent: function(e){
+    	students.create({
+    		firstName: this.refs.fName.value,
+    		lastName: this.refs.lName.value
+    	});
+    	this.closeModal();
+    	
+     }
+
 });
+
+
