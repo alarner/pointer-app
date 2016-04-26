@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
-  knex.schema.table('users', function(t) {
-  	t.string('userType', ['teacher', 'admin']).notNull();
+  return knex.schema.table('users', function(t) {
+  	t.string('userType').notNull().defaultTo('Admin');
   });
 };
 
