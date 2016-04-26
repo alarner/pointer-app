@@ -5,7 +5,11 @@ export default React.createClass({
 	getInitialState: function() {
 		return {
 			story: new StoryModel({id: this.props.params.storyId}),
-			error: ''
+			error: '',
+			currentPage: 0,
+			currentWord: 0,
+			arrayOfWords:[]
+
 		};
 	},
 	componentDidMount: function() {
@@ -35,19 +39,29 @@ export default React.createClass({
 		}
 
 		else {
+			console.log(this.state.story);
 			return (
 				<section className="page-read">
-					<h1>Naked Creature Finds a Stream</h1>
-					<img className="eleven columns" src='https://trello-attachments.s3.amazonaws.com/571f7f7e00a12eb39662ee19/543x372/b10e6f962dbf447608f17601354f7927/upload_4_26_2016_at_9_47_25_AM.png'/>
-					<p className="eleven columns">Whilst happening upon a stream, our creature friend exclaims, "Well would you look at that - a stream!!"</p>
+					<h1>{this.state.story.get('title')}</h1>
+					<img className="eleven columns" src={this.state.story.get('pages')[this.state.currentPage].image}/>
+					<p className="eleven columns">{this.state.story.get('pages')[this.state.currentPage].body}</p>
 					<div className="eight columns directionals-container">
-						<button className="directionals">Back</button>
-						<button className="directionals">Forward</button>
+						<button className="directionals" onClick={this.previousPage}>Back</button>
+						<button className="directionals" onClick={this.nextPage}>Forward</button>
 					</div>
-					<h1>Pg. 1</h1>
+					<h1>Pg. {this.state.currentPage}</h1>
 				</section>
 			);
 
 		}
+	},
+	nextPage: function() {
+		console.log('nextPage');
+		this.setState({currentPage:this.state.currentPage+1});
+		console.log(this.state.currentPage);
+	},
+	previousPage: function(){
+		console.log('previousPage');
+		this.setState({currentPage:this.state.currentPage-1});
 	}
 });
