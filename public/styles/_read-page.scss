@@ -1,7 +1,29 @@
-.directionals-container {
+.directionals {
+	min-width: 12em;
+	display: inline;
 	margin: 0 auto;
 }
 
-.directionals {
-		padding: 0 auto;
+.page-read {
+	display: block;
+}
+
+.page-pic {
+	display: block;
+	margin: 0 auto;
+}
+.page-text {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.5em;
+}
+.page-num {
+	text-align: center;
+	display: inline;
+	margin: 0 9%;
+}
+.directionals-container {
+	margin: 0 auto;
+	width: 25em;
 }
