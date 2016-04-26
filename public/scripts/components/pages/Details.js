@@ -1,8 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
-
 import students from './../../collections/StudentsCollection.js'; 
-
 export default React.createClass({
 	getInitialState: function() {
 		return {
@@ -16,7 +15,9 @@ export default React.createClass({
 		students.fetch();
 	},
 	render: function() {
+
 		const allStudents = this.state.students.map((student, index, array) => {
+
 		return (
 			<option value={student.get('id')} key={index}>{student.get('firstName')} {student.get('lastName')}</option> 
 			);
@@ -34,6 +35,7 @@ export default React.createClass({
 						</select>
 					</div>
 				</div>
+				<Link className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
 			</section>
 		);
 	}

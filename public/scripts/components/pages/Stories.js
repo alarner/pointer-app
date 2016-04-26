@@ -31,7 +31,8 @@ const StoryList = React.createClass ({
 				}).map((storyval, i, array)=>{
 				return (
 					<PicTitleThumb
-					key = {i}
+					key = {storyval.get('id')}
+					id = {storyval.get('id')}
 					title={storyval.get('title')}
 					name = {storyval.get('author')}
 					category = {storyval.get('category')}
