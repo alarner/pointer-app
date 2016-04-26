@@ -1,5 +1,5 @@
 import React from 'react';
-import User from '../../models/User.js';
+import user from '../../models/User.js';
 import $ from 'jquery';
 
 
@@ -21,7 +21,8 @@ export default React.createClass({
 			firstName: this.refs.first.value,
 			lastName: this.refs.last.value, 
 			email: this.refs.email.value,
-			password: this.refs.password.value
+			password: this.refs.password.value,
+			userType: 'teacher'
 		},
 
 		success: (loggedArg) => {
