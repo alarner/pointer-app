@@ -51,8 +51,6 @@ export default React.createClass({
  	   this.refs.password.value = this.randomPW();
 	},
 
-
-
 	render: function() {
 		return (
 			<section> 
