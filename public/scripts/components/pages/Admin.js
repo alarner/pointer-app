@@ -72,7 +72,6 @@ export default React.createClass({
 			);
 	}
 
-
 });
 
 
