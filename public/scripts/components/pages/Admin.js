@@ -1,8 +1,40 @@
 import React from 'react';
+import User from '../../models/User.js';
 import $ from 'jquery';
 
 
 export default React.createClass({
+	getInitialState: function() {
+		return {
+			errors: {},
+			user: user
+		};
+	},
+
+	createTeacher: function(e) {
+	e.preventDefault();
+	$.ajax({
+		url: '/auth/login',
+		type: 'POST',
+		data: {
+			
+			firstName: this.refs.first.value,
+			lastName: this.refs.last.value, 
+			email: this.refs.email.value,
+			password: this.refs.password.value
+		},
+
+		success: (loggedArg) => {
+						
+			this.state.user.set(loggedArg);
+		},
+		error: (errorArg) => {
+				
+				this.setState({errors: errorArg.responseJSON});
+			}
+		});
+	},
+
 	render: function() {
 		return (
 			<section> 
@@ -20,16 +52,7 @@ export default React.createClass({
 				</form>
 			</section>  
 			);
-
-
-
-
 	}
-
-
-
-
-
 
 
 });
