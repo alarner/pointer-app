@@ -39,7 +39,7 @@ export default React.createClass({
 		}
 
 		else {
-			console.log(this.state.story);
+			
 			return (
 				<section className="page-read">
 					<h1>{this.state.story.get('title')}</h1>
@@ -56,12 +56,12 @@ export default React.createClass({
 		}
 	},
 	nextPage: function() {
-		console.log('nextPage');
+		
 		this.setState({currentPage:this.state.currentPage+1});
-		console.log(this.state.currentPage);
+		
 	},
 	previousPage: function(){
-		console.log('previousPage');
+	
 		this.setState({currentPage:this.state.currentPage-1});
 	}
 });
