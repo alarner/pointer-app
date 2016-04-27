@@ -27,8 +27,7 @@ import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
 import CategoryPage from './components/pages/Categories';
-
-
+import Admin from './components/pages/Admin';
 
 const router = (
 	<Router history={browserHistory}>
@@ -40,6 +39,7 @@ const router = (
 			<Route path="/stories/:storyId/details" component={Details} />
 			<Route path="/stories/:storyId/read" component={Read} />
 			<Route path="/login" component={Login}/>
+			<Route path="/add-user" component={Admin}/>
 		</Route>
 	</Router>
 );

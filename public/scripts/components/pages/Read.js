@@ -7,8 +7,8 @@ export default React.createClass({
 			story: new StoryModel({id: this.props.params.storyId}),
 			error: '',
 			currentPage: 0,
-			currentWord: 0,
-			arrayOfWords:[]
+			currentWordLocation: 0,
+			numberOfWords:0
 
 		};
 	},
@@ -37,11 +37,27 @@ export default React.createClass({
 				);	
 		}
 		else {
+			
+			let pageText = (this.state.story.get('pages')[this.state.currentPage].body).replace('.','. ');
+			
+			let arrayOfWords = pageText.split(' ');
+			let textAfterCurrentWord=arrayOfWords;
+			let textBeforeCurrentWord = textAfterCurrentWord.splice(0,this.state.currentWordLocation);
+			let currentWord=textAfterCurrentWord.splice(0,1);
+
+
 	 		return (
                 <section className="page-read">
                     <h1>{this.state.story.get('title')}</h1>
                     <img className="page-pic" src={this.state.story.get('pages')[this.state.currentPage].image}/>
-                    <p className="page-text">{this.state.story.get('pages')[this.state.currentPage].body}</p>
+                    <p className="page-text">
+                    	{textBeforeCurrentWord.join(' ')+' '}<span className="word-highlight">{currentWord}</span>{' '+textAfterCurrentWord.join(' ')}
+                	</p>
+                	<div className="directionals-container">
+                        <button className="directionals" onClick={this.PreviousWord}>Previous Word</button>
+                        
+                        <button className="directionals" onClick={this.nextWord}>Next Word</button>
+                    </div>
                     <div className="directionals-container">
                         <button className="directionals" onClick={this.previousPage}>Previous</button>
                         <h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
@@ -53,12 +69,20 @@ export default React.createClass({
         }
     },
 	nextPage: function() {
-		
+
 		this.setState({currentPage:this.state.currentPage+1});
 		
 	},
 	previousPage: function(){
 	
 		this.setState({currentPage:this.state.currentPage-1});
+	},
+
+	nextWord: function(){
+
+		this.setState({currentWordLocation:this.state.currentWordLocation+1});
+	},
+	PreviousWord: function(){
+		this.setState({currentWordLocation:this.state.currentWordLocation-1});
 	}
 });
