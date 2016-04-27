@@ -4,7 +4,6 @@ const StoryReadModel = Backbone.Model.extend({
 	defaults:{
 		createdAt: null,
 		updatedAt: null,
-		deletedAt: null,
 		finishedAt: null,
 		userId: '',
 		studentId: '',

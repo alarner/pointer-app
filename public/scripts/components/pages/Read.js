@@ -9,8 +9,7 @@ export default React.createClass({
 			error: '',
 			currentPage: 10,
 			currentWord: 0,
-			arrayOfWords:[],
-			storyRead: new StoryReadModel({id: ''})
+			arrayOfWords:[]
 		};
 	},
 	componentDidMount: function() {
@@ -64,8 +63,9 @@ export default React.createClass({
 	nextPage: function() {
 		if(this.state.story.get('pages').length === this.state.currentPage+1) {
 			console.log('You\'ve made it to the end of the story!');
-			console.log(this.state.storyRead);
-
+			StoryReadModel.save({
+				finishedAt: new Date()
+			});
 		} else {
 			console.log(this.state.currentPage+2);
 			console.log(this.state.story.get('pages').length);
