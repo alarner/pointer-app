@@ -10,6 +10,9 @@
 	.videoblock{
 		padding-top: 1.5em;
 		overflow: hidden;
+		.video {
+			width: 100%;
+		}
 		.fb-like{
 			margin: 0.05em;
 			float: right;
@@ -18,8 +21,10 @@
 			margin: 0.15em;
 			float: right;
 		}
+
 	}
 	.textblock {
+		padding-top: 1.5em;
 		input{
 			width: 15em;
 		}

@@ -6,7 +6,9 @@ export default React.createClass({
 		return (
 			<section className="page-home container">
         			<div className="one-half column videoblock">
-            			<embed scale="aspect" width="380" height="214" src="https://www.youtube.com/embed/Fo-7bR9i_ms" frameBorder="0" allowFullScreen></embed>
+            			<div className="video">
+            				<embed scale="aspect" width="459" height="258" src="https://www.youtube.com/embed/Fo-7bR9i_ms" frameBorder="0" allowFullScreen></embed>
+            			</div>
             			<div className="follow-buttons">
 	            			<a className="fb-like" data-href="http://www.pointerapp.co/" data-width="50" data-layout="button" data-action="like" data-show-faces="false" dataShare="false"></a>
 	            			<a className="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
