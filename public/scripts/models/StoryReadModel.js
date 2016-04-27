@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-const StoryReadModel = Backbone.Model.Extend({
+const StoryReadModel = Backbone.Model.extend({
 	defaults:{
 		createdAt: null,
 		updatedAt: null,
@@ -14,4 +14,4 @@ const StoryReadModel = Backbone.Model.Extend({
 	idAttribute: 'id'
 });
 
-export default StoryReadModel;
+export default new StoryReadModel();
