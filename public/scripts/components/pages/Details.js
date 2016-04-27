@@ -44,15 +44,18 @@ export default React.createClass({
                 <a href= '#' onClick={this.openModal}>Add a New Student</a>
                  	<Rayon isOpen={this.state.modalVisible} onClose={this.closeModal}>
                      	<form className="add-student" onSubmit={this.addStudent}>
-							<label className="add-student-fName-label">First Name</label>
-							<input type = "text" ref = "fName" placeholder = "First Name"></input>
-							<label className="add-student-lName-label">Last Name</label>
-							<input type = "text" ref = "lName" placeholder = "Last Name"></input>
-							<button>Submit</button>
+                     		<h1>Add a Student</h1>
+                     		<fieldset>
+								<label className="add-student-fName-label">First Name</label>
+								<input type = "text" ref = "fName" placeholder = "First Name"></input>
+								<label className="add-student-lName-label">Last Name</label>
+								<input type = "text" ref = "lName" placeholder = "Last Name"></input>
+							</fieldset>
+							<div className = 'button-container'>
+								<button className = 'button'>Submit</button>
+								<a href = '#' className = "close" onClick={this.closeModal}>Cancel</a>
+							</div>
 						</form>
-						<footer>
-                        	<button onClick={this.closeModal}>Close</button>
-                    	</footer>
                  	</Rayon>
             	</section>
          );
@@ -62,7 +65,8 @@ export default React.createClass({
             modalVisible: true
         });
     },
-    closeModal: function() {
+    closeModal: function(e) {
+    	e.preventDefault();
         this.setState({
             modalVisible: false
         });
