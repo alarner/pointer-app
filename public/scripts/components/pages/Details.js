@@ -85,7 +85,7 @@ export default React.createClass({
      	let storyId = this.props.params.storyId;
      	$.ajax({
      		type: 'POST',
- 			url: 'api/v1/storyread',
+ 			url: '/api/v1/storyread',
 			data: {
 				studentId: studentId,
 				storyId: storyId
