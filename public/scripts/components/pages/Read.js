@@ -22,14 +22,6 @@ export default React.createClass({
 				this.setState({error: error.responseJSON.message});
 			}
 		});
-		this.state.storyRead.on('change', () => {
-			this.setState({storyRead: this.state.storyRead});
-		});
-		this.state.storyRead.fetch({
-			success: () => {
-				this.setState({storyRead: new StoryReadModel({id: id})});
-			}
-		});
 	},
 	render: function() {
 		if(this.state.error) {
@@ -67,9 +59,12 @@ export default React.createClass({
 				finishedAt: new Date()
 			});
 		} else {
-			console.log(this.state.currentPage+2);
-			console.log(this.state.story.get('pages').length);
+			let currentPage = this.state.currentPage+2;
 			this.setState({currentPage:this.state.currentPage+1});
+			StoryReadModel.save({
+				currentPage: currentPage
+			});
+			console.log(StoryReadModel);
 		}		
 	},
 	previousPage: function(){
