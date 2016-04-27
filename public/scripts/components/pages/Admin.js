@@ -14,7 +14,7 @@ export default React.createClass({
 	createTeacher: function(e) {
 	e.preventDefault();
 	$.ajax({
-		url: '/auth/add-user',
+		url: '/auth/register',
 		type: 'POST',
 		data: {
 			
@@ -31,8 +31,9 @@ export default React.createClass({
 			
 		},
 		error: (errorArg) => {
-				
+				console.log(errorArg.responseJSON);
 				this.setState({errors: errorArg.responseJSON});
+
 			}
 		});
 	},
@@ -65,6 +66,7 @@ export default React.createClass({
 					<h2>Password</h2>
 					<input className="u-half-width" type="text" ref='password' title="Password is required and cannot left blank" required="required"/>
 					<button className="button-generate" type="button" onClick={this.generatePassword}>Generate Password</button>
+					<div className="error">{this.state.errors.email ? this.state.errors.email.message : null}</div>
 					<button className="button-primary" type='submit'>Create Teacher</button>
 				</form>
 			</section>  

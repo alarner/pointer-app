@@ -4,7 +4,7 @@ module.exports = {
 		status: 500
 	},
 	EMAIL_EXISTS: {
-		message: 'A user with that email has already registered. Would you like to <a href="/auth/reset-password">reset your password</a>?',
+		message: 'A user with that email has already registered. Please enter a different email address.',
 		status: 409
 	},
 	INVALID_PASSWORD: {
