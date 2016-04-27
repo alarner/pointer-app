@@ -21,7 +21,16 @@ export default React.createClass({
 	},
 
 	render: function() {
-		if(this.state.user.get('id')) {
+		console.log(this.state.user.attributes.userType);
+		if (this.state.user.attributes.userType === 'Admin') {
+			return (<nav>
+			<Link to="/stories"><img src="/images/pointer_logo.png" /></Link>
+			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
+			<Link className="nav-links" to="/stories">Stories</Link>
+			<Link className="nav-links" to="/Admin">Add User</Link>
+		</nav>);
+		}
+		else if(this.state.user.get('id')) {
 			return (<nav>
 			<Link to="/stories"><img src="/images/pointer_logo.png" /></Link>
 			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
