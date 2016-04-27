@@ -84,11 +84,11 @@ export default React.createClass({
 			});
 			this.setState({finished: true});
 		} else {
-			this.setState({currentPage:this.state.currentPage+1});
+			this.setState({currentPage:this.state.currentPage+1, currentWordLocation: 0, numberOfWords:0});
 		}		
 	},
 	previousPage: function(){
-		this.setState({currentPage:this.state.currentPage-1});
+		this.setState({currentPage:this.state.currentPage-1, currentWordLocation: 0, numberOfWords:0});
 	},
 
 	nextWord: function(){
