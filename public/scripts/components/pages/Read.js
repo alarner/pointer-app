@@ -7,7 +7,7 @@ export default React.createClass({
 		return {
 			story: new StoryModel({id: this.props.params.storyId}),
 			error: '',
-			currentPage: 10,
+			currentPage: 0,
 			currentWord: 0,
 			arrayOfWords:[],
 			finished: false
@@ -35,7 +35,6 @@ export default React.createClass({
 		}
 		if(this.state.error) {
 			return (
-
 				<section className="page-read">
 					<h1>{this.state.error}</h1>
 				</section>
@@ -69,11 +68,9 @@ export default React.createClass({
 			this.setState({finished: true});
 		} else {
 			this.setState({currentPage:this.state.currentPage+1});
-			console.log(StoryReadModel);
 		}		
 	},
 	previousPage: function(){
-	
 		this.setState({currentPage:this.state.currentPage-1});
 	}
 });
