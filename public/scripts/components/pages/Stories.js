@@ -43,14 +43,16 @@ const StoryList = React.createClass ({
 				<div className="categories-preview row" key={i}>
 					<h3>{category}</h3>
 					{stories}
-					<button className="category-button"> See more {category}</button>
+					<button className="category-button stories-button"> See more {category}</button>
 				</div>);
 		});
 		return(
 			<section className="page-stories">
 				<h3>Stories</h3>
 				<h1>Pick a Story</h1>
-				{storyRows}
+				<div className="container">
+					{storyRows}
+				</div>
 			</section>
 			);
 	}

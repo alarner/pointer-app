@@ -43,13 +43,13 @@ export default React.createClass({
 			return (
 				<section className="page-read">
 					<h1>{this.state.story.get('title')}</h1>
-					<img className="eleven columns" src={this.state.story.get('pages')[this.state.currentPage].image}/>
-					<p className="eleven columns">{this.state.story.get('pages')[this.state.currentPage].body}</p>
-					<div className="eight columns directionals-container">
-						<button className="directionals" onClick={this.previousPage}>Back</button>
-						<button className="directionals" onClick={this.nextPage}>Forward</button>
+					<img className="page-pic" src={this.state.story.get('pages')[this.state.currentPage].image}/>
+					<p className="page-text">{this.state.story.get('pages')[this.state.currentPage].body}</p>
+					<div className="directionals-container">
+						<button className="directionals" onClick={this.previousPage}>Previous</button>
+						<h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
+						<button className="directionals" onClick={this.nextPage}>Next</button>
 					</div>
-					<h1>Pg. {this.state.currentPage+1}</h1>
 				</section>
 			);
 
