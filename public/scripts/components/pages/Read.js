@@ -9,6 +9,7 @@ export default React.createClass({
 			currentPage: 0,
 			currentWord: 0,
 			arrayOfWords:[]
+			
 		};
 	},
 	componentDidMount: function() {
