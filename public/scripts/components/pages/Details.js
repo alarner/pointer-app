@@ -74,6 +74,7 @@ export default React.createClass({
         });
     },
     addStudent: function(e){
+    	e.preventDefault();
     	students.create({
     		firstName: this.refs.fName.value,
     		lastName: this.refs.lName.value

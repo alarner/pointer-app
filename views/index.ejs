@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Pointer App</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
 
 	</head>
@@ -11,5 +12,29 @@
 			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
 		</script>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<script>window.twttr = (function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0],
+		    t = window.twttr || {};
+		  if (d.getElementById(id)) return t;
+		  js = d.createElement(s);
+		  js.id = id;
+		  js.src = "https://platform.twitter.com/widgets.js";
+		  fjs.parentNode.insertBefore(js, fjs);
+		 
+		  t._e = [];
+		  t.ready = function(f) {
+		    t._e.push(f);
+		  };
+		 
+		  return t;
+		}(document, "script", "twitter-wjs"));</script>
 	</body>
 </html>
