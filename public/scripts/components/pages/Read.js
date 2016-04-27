@@ -77,7 +77,9 @@ export default React.createClass({
                         <h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
                         <button className="directionals" onClick={this.nextPage}>Next</button>
                     </div>
-                    <progress max={this.state.story.get('pages').length} value={this.state.currentPage+1}></progress>
+                    <div className="progress-bar">
+                    	<progress max={this.state.story.get('pages').length} value={this.state.currentPage+1}></progress>
+                    </div>
                 </section>
             );
         }
