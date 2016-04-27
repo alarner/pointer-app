@@ -26,6 +26,7 @@ import Stories from './components/pages/Stories';
 import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
+import CategoryPage from './components/pages/Categories';
 import user from './models/user';
 import Admin from './components/pages/Admin';
 
@@ -37,12 +38,12 @@ function requireAuth(nextState, replace) {
 	}
 }
 
-
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
+			<Route path="/stories/:categoryId" component={CategoryPage} onEnter={requireAuth}/>
 			<Route path="/stories" component={Stories} onEnter={requireAuth}/>
 			<Route path="/stories/:storyId/details" component={Details} onEnter={requireAuth}/>
 			<Route path="/stories/:storyId/read" component={Read} onEnter={requireAuth}/>

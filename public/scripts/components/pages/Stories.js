@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import {Link} from 'react-router';
 import Stories from './../../collections/StoryCollection';
 import PicTitleThumb from './../sub-components/PicTitleThumb.js';
 
@@ -9,10 +10,14 @@ const StoryList = React.createClass ({
 		return{Stories: Stories};
 	},
 	componentDidMount: function(){
-		Stories.on('update', () =>{
-			this.setState({Stories: Stories});
-		});
+		Stories.on('update', this.updateStories);
 		Stories.fetch();
+	},
+	componentWillUnmount: function() {
+		Stories.off('update', this.updateStories);
+	},
+	updateStories: function() {
+		this.setState({Stories: Stories});
 	},
 	render: function(){
 		const categories = Stories.pluck('category');
@@ -43,7 +48,7 @@ const StoryList = React.createClass ({
 				<div className="categories-preview row" key={i}>
 					<h3>{category}</h3>
 					{stories}
-					<button className="category-button stories-button"> See more {category}</button>
+					<Link to={`/stories/${category}`} className="category-button stories-button">See more {category}</Link>
 				</div>);
 		});
 		return(
