@@ -5,13 +5,19 @@ import Stories from './../../collections/StoryCollection';
 import PicTitleThumb from './../sub-components/PicTitleThumb.js';
 
 
-const StoryList = React.createClass ({
+const CategoryPage = React.createClass ({
 	getInitialState: function(){
 		return{Stories: Stories};
 	},
 	componentDidMount: function(){
 		Stories.on('update', this.updateStories);
-		Stories.fetch();
+		Stories.fetch({
+			data: {
+				where: {
+					category: this.props.params.categoryId
+				}
+			}
+		});
 	},
 	componentWillUnmount: function() {
 		Stories.off('update', this.updateStories);
@@ -45,16 +51,15 @@ const StoryList = React.createClass ({
 					);
 			});
 			return(
-				<div className="categories-preview row" key={i}>
-					<h3>{category}</h3>
+				<div className="categories-page-row row" key={i}>
 					{stories}
-					<Link to={`/stories/${category}`} className="category-button stories-button">See more {category}</Link>
 				</div>);
 		});
 		return(
-			<section className="page-stories">
-				<h3>Stories</h3>
-				<h1>Pick a Story</h1>
+			<section className="page-categories">
+				<div>
+					<Link className="back-to-stories" to="/stories">Stories</Link><i className="fa fa-angle-right back-to-stories"></i><span>{this.props.params.categoryId}</span>
+				</div>
 				<div className="container">
 					{storyRows}
 				</div>
@@ -62,4 +67,4 @@ const StoryList = React.createClass ({
 			);
 	}
 });
-export default StoryList;
+export default CategoryPage;

@@ -26,6 +26,7 @@ import Stories from './components/pages/Stories';
 import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
+import CategoryPage from './components/pages/Categories';
 
 
 
@@ -35,6 +36,7 @@ const router = (
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
 			<Route path="/stories" component={Stories} />
+			<Route path="/stories/:categoryId" component={CategoryPage} />
 			<Route path="/stories/:storyId/details" component={Details} />
 			<Route path="/stories/:storyId/read" component={Read} />
 			<Route path="/login" component={Login}/>
