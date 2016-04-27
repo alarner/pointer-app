@@ -27,17 +27,26 @@ import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
 import CategoryPage from './components/pages/Categories';
+import user from './models/user';
 import Admin from './components/pages/Admin';
+
+function requireAuth(nextState, replace) {
+	  if (!user.get('id')) {
+	    replace({
+	      pathname: '/login'
+	    });
+	}
+}
 
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Home}/>
 			<Route path="/contact" component={Contact} />
-			<Route path="/stories" component={Stories} />
-			<Route path="/stories/:categoryId" component={CategoryPage} />
-			<Route path="/stories/:storyId/details" component={Details} />
-			<Route path="/stories/:storyId/read" component={Read} />
+			<Route path="/stories/:categoryId" component={CategoryPage} onEnter={requireAuth}/>
+			<Route path="/stories" component={Stories} onEnter={requireAuth}/>
+			<Route path="/stories/:storyId/details" component={Details} onEnter={requireAuth}/>
+			<Route path="/stories/:storyId/read" component={Read} onEnter={requireAuth}/>
 			<Route path="/login" component={Login}/>
 			<Route path="/add-user" component={Admin}/>
 		</Route>

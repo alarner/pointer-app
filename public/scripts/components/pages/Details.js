@@ -3,7 +3,7 @@ import {Link, browserHistory} from 'react-router';
 import CurrentStory from '../sub-components/CurrentStory.js';
 import Rayon from 'rayon';
 import students from './../../collections/StudentsCollection.js';
-import $ from 'jquery';
+import StoryReadModel from './../../models/StoryReadModel.js';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -20,7 +20,6 @@ export default React.createClass({
 		students.fetch();
 	},
 	render: function() {
-
 		const allStudents = this.state.students.map((student, index, array) => {
 
 		return (
@@ -80,7 +79,6 @@ export default React.createClass({
     		lastName: this.refs.lName.value
     	});
     	this.closeModal();
-    	
      },
      selectChange: function(e) {
      	this.setState({currentStudent: e.target.value});
@@ -89,20 +87,12 @@ export default React.createClass({
      	e.preventDefault();
      	let studentId = this.state.currentStudent;
      	let storyId = this.props.params.storyId;
-     	$.ajax({
-     		type: 'POST',
- 			url: '/api/v1/storyread',
-			data: {
-				studentId: studentId,
-				storyId: storyId
-			},
-			success: function() {
-				browserHistory.push('/stories/'+storyId+'/read');
-			},
-			error: function(error) {
-				console.log('You got an error: '+error);
-			}
+     	StoryReadModel.clear();
+     	StoryReadModel.save({
+     		studentId: studentId,
+     		storyId: storyId
      	});
+     	browserHistory.push('/stories/'+storyId+'/read');
      }
 });
 
