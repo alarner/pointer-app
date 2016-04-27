@@ -24,10 +24,10 @@ export default React.createClass({
 				this.setState({error: error.responseJSON.message});
 			}
 		});
-		$('body').keyup(this.handleKeyEvent);
+		$('body').keydown(this.handleKeyEvent);
 	},
 	componentWillUnmount: function() {
-		$('body').off('keyup', this.handleKeyEvent);
+		$('body').off('keydown', this.handleKeyEvent);
 	},
 	render: function() {
 		if(this.state.finished) {
