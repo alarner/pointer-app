@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-const StoryReadModel = Backbone.Model.Extend({
+export default Backbone.Model.extend({
 	defaults:{
 		createdAt: null,
 		updatedAt: null,
@@ -13,5 +13,3 @@ const StoryReadModel = Backbone.Model.Extend({
 	urlRoot: '/api/v1/storyread',
 	idAttribute: 'id'
 });
-
-export default StoryReadModel;

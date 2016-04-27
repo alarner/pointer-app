@@ -1,15 +1,16 @@
 import React from 'react';
 import StoryModel from './../../models/StoryModel.js';
+import StoryReadModel from './../../models/StoryReadModel.js';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			story: new StoryModel({id: this.props.params.storyId}),
 			error: '',
-			currentPage: 0,
+			currentPage: 10,
 			currentWord: 0,
-			arrayOfWords:[]
-
+			arrayOfWords:[],
+			storyRead: new StoryReadModel({id: ''})
 		};
 	},
 	componentDidMount: function() {
@@ -53,9 +54,15 @@ export default React.createClass({
         }
     },
 	nextPage: function() {
-		
-		this.setState({currentPage:this.state.currentPage+1});
-		
+		if(this.state.story.get('pages').length === this.state.currentPage+1) {
+			console.log('You\'ve made it to the end of the story!');
+			console.log(this.state.storyRead.get('id'));
+
+		} else {
+			console.log(this.state.currentPage);
+			console.log(this.state.story.get('pages').length);
+			this.setState({currentPage:this.state.currentPage+1});
+		}		
 	},
 	previousPage: function(){
 	
