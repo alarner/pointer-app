@@ -16,6 +16,11 @@ export default React.createClass({
 	componentDidMount: function() {
 		this.state.story.on('change', (storyData)=> {
 			this.setState({story: this.state.story});
+			var pages = this.state.story.get('pages')
+			for (let i=0; i<pages.length; i++) {
+				let image=new Image()
+				image.src=pages[i].image
+			}
 		});
 		this.state.story.fetch({
 			data: {withRelated: ['pages']},
@@ -72,7 +77,9 @@ export default React.createClass({
                         <h1 className="page-num">Pg. {this.state.currentPage+1}</h1>
                         <button className="directionals" onClick={this.nextPage}>Next</button>
                     </div>
-                    <progress max={this.state.story.get('pages').length} value={this.state.currentPage+1}></progress>
+                    <div className="progress-bar">
+                    	<progress max={this.state.story.get('pages').length} value={this.state.currentPage+1}></progress>
+                    </div>
                 </section>
             );
         }
