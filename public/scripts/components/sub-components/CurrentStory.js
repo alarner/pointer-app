@@ -29,11 +29,13 @@ export default React.createClass({
 
 	render: function () {
 		return (
-			<section>
-				<h1>{this.state.story.get('title')}</h1>
-				<div>
-					<img src={this.state.story.get('coverImage')}/>
-					<p>{this.state.story.get('description')}</p>
+			<section className="row">
+				<div className='one-third column'>
+					<img className="details-thumb" src={this.state.story.get('coverImage')}/>
+				</div>	
+				<div className="two-thirds column">
+					<h2>{this.state.story.get('title')}</h2>
+					<p>{this.state.story.get('description')}</p>	
 				</div>
 			</section> 
 		);

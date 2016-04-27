@@ -21,14 +21,23 @@ export default React.createClass({
 	},
 
 	render: function() {
-		if(this.state.user.get('id')) {
+		if (this.state.user.attributes.userType === 'Admin') {
 			return (<nav>
-			<img src="/images/pointer_logo.png" />
+			<Link to="/stories"><img src="/images/pointer_logo.png" /></Link>
 			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
+			<Link className="nav-links" to="/stories">Stories</Link>
+			<Link className="nav-links" to="/Admin">Add User</Link>
+		</nav>);
+		}
+		else if(this.state.user.get('id')) {
+			return (<nav>
+			<Link to="/stories"><img src="/images/pointer_logo.png" /></Link>
+			<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
+			<Link className="nav-links" to="/stories">Stories</Link>
 		</nav>);
 		} else {
 		return (<nav>
-			<img src="/images/pointer_logo.png" />
+			<Link to="/"><img src="/images/pointer_logo.png" /></Link>
 			<Link className="nav-links" to='/contact'>Contact</Link>		
 			<Link className="nav-links" to='/login'>Login</Link>
 		</nav>);
@@ -40,7 +49,7 @@ export default React.createClass({
 		this.state.user.clear();
 		$.ajax({
 			type: 'POST',
-			url: 'auth/logout'
+			url: '/auth/logout'
 		});
 		browserHistory.push('/');
 	}
