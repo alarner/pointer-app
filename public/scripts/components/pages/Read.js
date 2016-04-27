@@ -37,6 +37,7 @@ export default React.createClass({
 				);	
 		}
 		else {
+			this.selectWord;
 	 		return (
                 <section className="page-read">
                     <h1>{this.state.story.get('title')}</h1>
@@ -60,5 +61,10 @@ export default React.createClass({
 	previousPage: function(){
 	
 		this.setState({currentPage:this.state.currentPage-1});
+	},
+	selectWord: function(){
+		let textComplete=this.state.story.get('pages')[this.state.currentPage].body;
+		console.log(textComplete);
+
 	}
 });
