@@ -21,7 +21,6 @@ export default React.createClass({
 	},
 
 	render: function() {
-		console.log(this.state.user.attributes.userType);
 		if (this.state.user.attributes.userType === 'Admin') {
 			return (<nav>
 			<Link to="/stories"><img src="/images/pointer_logo.png" /></Link>
