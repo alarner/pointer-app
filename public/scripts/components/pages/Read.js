@@ -9,12 +9,16 @@ export default React.createClass({
 			currentPage: 0,
 			currentWord: 0,
 			arrayOfWords:[]
-
 		};
 	},
 	componentDidMount: function() {
 		this.state.story.on('change', (storyData)=> {
 			this.setState({story: this.state.story});
+			var pages = this.state.story.get('pages')
+			for (let i=0; i<pages.length; i++) {
+				let image=new Image()
+				image.src=pages[i].image
+			}
 		});
 		this.state.story.fetch({
 			data: {withRelated: ['pages']},
