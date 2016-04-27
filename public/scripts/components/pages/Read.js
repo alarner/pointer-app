@@ -46,14 +46,11 @@ export default React.createClass({
 				);	
 		}
 		else {
-			
 			let pageText = (this.state.story.get('pages')[this.state.currentPage].body).replace('.','. ');
-			
 			let arrayOfWords = pageText.split(' ');
 			let textAfterCurrentWord=arrayOfWords;
 			let textBeforeCurrentWord = textAfterCurrentWord.splice(0,this.state.currentWordLocation);
 			let currentWord=textAfterCurrentWord.splice(0,1);
-
 
 	 		return (
                 <section className="page-read">
@@ -85,14 +82,12 @@ export default React.createClass({
 			this.setState({finished: true});
 		} else {
 			this.setState({currentPage:this.state.currentPage+1, currentWordLocation: 0, numberOfWords:0});
-		}		
+		}
 	},
 	previousPage: function(){
 		this.setState({currentPage:this.state.currentPage-1, currentWordLocation: 0, numberOfWords:0});
 	},
-
 	nextWord: function(){
-
 		this.setState({currentWordLocation:this.state.currentWordLocation+1});
 	},
 	PreviousWord: function(){
