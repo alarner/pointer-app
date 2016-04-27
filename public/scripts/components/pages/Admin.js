@@ -27,8 +27,7 @@ export default React.createClass({
 			userType: 'teacher'
 		},
 
-		success: (loggedArg) => {
-			console.log(this.state.user.set(loggedArg));			
+		success: (loggedArg) => {			
 			this.state.user.set(loggedArg);
 			this.setState({
             	modalVisible: true
@@ -36,7 +35,6 @@ export default React.createClass({
 		},
 
 		error: (errorArg) => {
-				console.log(errorArg.responseJSON);
 				this.setState({errors: errorArg.responseJSON});
 
 			}
