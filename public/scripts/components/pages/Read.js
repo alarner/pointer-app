@@ -1,6 +1,7 @@
 import React from 'react';
 import StoryModel from './../../models/StoryModel.js';
 import StoryReadModel from './../../models/StoryReadModel.js';
+import $ from 'jquery';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -23,6 +24,10 @@ export default React.createClass({
 				this.setState({error: error.responseJSON.message});
 			}
 		});
+		$('body').keyup(this.handleKeyEvent);
+	},
+	componentWillUnmount: function() {
+		$('body').off('keyup', this.handleKeyEvent);
 	},
 	render: function() {
 		if(this.state.finished) {
@@ -95,6 +100,13 @@ export default React.createClass({
 	},
 	PreviousWord: function(){
 		this.setState({currentWordLocation:this.state.currentWordLocation-1});
+	},
+	handleKeyEvent: function(e) {
+		if(e.keyCode === 37) {
+			this.PreviousWord();
+		} else if (e.keyCode === 39) {
+			this.nextWord();
+		}
 	},
 	reread: function() {
 		this.setState({finished: false, currentPage: 0, currentWordLocation: 0, numberOfWords:0});
