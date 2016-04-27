@@ -30,6 +30,7 @@ export default React.createClass({
 				<section>
 					<h1>YOU DID IT :D</h1>
 					<a href="/stories">Read other stories!</a>
+					<p onClick={this.reread}>Re-read the story!</p>
 				</section>
 			);
 		}
@@ -96,5 +97,8 @@ export default React.createClass({
 	},
 	PreviousWord: function(){
 		this.setState({currentWordLocation:this.state.currentWordLocation-1});
+	},
+	reread: function() {
+		this.setState({finished: false, currentPage: 0, currentWordLocation: 0, numberOfWords:0});
 	}
 });
