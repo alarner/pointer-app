@@ -4,6 +4,7 @@ module.exports = {
 		status: 500
 	},
 	EMAIL_EXISTS: {
+
 		message: 'A user with that email has already registered.',
 		status: 409
 	},

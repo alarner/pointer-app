@@ -27,6 +27,7 @@ import Read from './components/pages/Read';
 import Details from './components/pages/Details';
 import Login from './components/pages/Login';
 import user from './models/user';
+import Admin from './components/pages/Admin';
 
 function requireAuth(nextState, replace) {
 	  if (!user.get('id')) {
@@ -46,6 +47,7 @@ const router = (
 			<Route path="/stories/:storyId/details" component={Details} onEnter={requireAuth}/>
 			<Route path="/stories/:storyId/read" component={Read} onEnter={requireAuth}/>
 			<Route path="/login" component={Login}/>
+			<Route path="/add-user" component={Admin}/>
 		</Route>
 	</Router>
 );

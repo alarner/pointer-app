@@ -1,5 +1,16 @@
-section.page-details img {
-	min-width: 100%;
-	float: left;
-	border: 10px solid #ccc;
+@import 'variables';
+
+img.details-thumb {
+max-width: 100%;
 }
+
+.stories-details {
+	overflow: hidden;
+}
+
+.stories-details {
+	overflow: hidden;
+}
+
+.mydropdown {float: left;}
+.read-now {float: left;}
