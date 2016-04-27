@@ -9,7 +9,8 @@ export default React.createClass({
 			error: '',
 			currentPage: 10,
 			currentWord: 0,
-			arrayOfWords:[]
+			arrayOfWords:[],
+			finished: false
 		};
 	},
 	componentDidMount: function() {
@@ -24,6 +25,14 @@ export default React.createClass({
 		});
 	},
 	render: function() {
+		if(this.state.finished) {
+			return (
+				<section>
+					<h1>YOU DID IT :D</h1>
+					<a href="/stories">Read other stories!</a>
+				</section>
+			);
+		}
 		if(this.state.error) {
 			return (
 
@@ -54,16 +63,12 @@ export default React.createClass({
     },
 	nextPage: function() {
 		if(this.state.story.get('pages').length === this.state.currentPage+1) {
-			console.log('You\'ve made it to the end of the story!');
 			StoryReadModel.save({
 				finishedAt: new Date()
 			});
+			this.setState({finished: true});
 		} else {
-			let currentPage = this.state.currentPage+2;
 			this.setState({currentPage:this.state.currentPage+1});
-			StoryReadModel.save({
-				currentPage: currentPage
-			});
 			console.log(StoryReadModel);
 		}		
 	},
