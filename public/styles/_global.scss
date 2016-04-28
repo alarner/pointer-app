@@ -61,13 +61,17 @@ img.logo {float: left;}
 	color: #5b5b5d;
 }
 // progress bar styles
+.progress-bar {
+	text-align: center;
+}
+
 progress {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	height: 1.5em;
-	width: 20em;
-	margin: 1em 0;
+	width: 25em;
+	margin: 2em 0;
 }
 
 progress::-webkit-progress-bar {
@@ -80,7 +84,15 @@ progress::-webkit-progress-value {
 	background-color: $color-main-green;
 	border-radius: 2px; 
 	background-size: 35px 20px, 100% 100%, 100% 100%;
+	transition: 0.4s linear;
 }
+
+progress::-moz-progress-bar {
+    background-color:  $color-main-green;
+    border-radius: 2px;
+    transition: 0.4s linear;
+}
+
 // footer styles
 
 footer {
