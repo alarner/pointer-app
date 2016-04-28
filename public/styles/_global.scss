@@ -15,7 +15,7 @@ a {
 
 // page components
 body {
-	font-family: 'Nobile' Helvetica, Arial, sans-serif;
+	font-family: 'Nobile', Helvetica, Arial, sans-serif;
 	color: $color-body-text; 
 	font-size: 18px;
 }
@@ -91,6 +91,12 @@ progress::-moz-progress-bar {
     background-color:  $color-main-green;
     border-radius: 2px;
     transition: 0.4s linear;
+}
+
+.nav-cat-dropdown {
+	float: right;
+	height: 38px;
+	margin-top: 24px;
 }
 
 // footer styles

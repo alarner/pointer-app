@@ -1,0 +1,26 @@
+@import 'variables';
+
+.rayon{
+	padding: 2em;
+	fieldset{
+		width: 50%;
+		margin: 0 auto;
+		max-width: 15em;
+	}
+	input{
+		width: 100%;
+	}
+	.button-container{
+		text-align: right;
+		margin-top: 1em;
+	}
+	.button{
+		background-color: $color-main-blue;
+		color: white;
+		margin-right: 1em;
+	}
+	.close{
+		font-size: 10pt;
+	}
+};
+

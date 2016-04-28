@@ -30,6 +30,34 @@ export default React.createClass({
 			<section className="page-details">
 				<h1>Details</h1>
 				<CurrentStory id={this.props.params.storyId}/>
+				<div className="student-dropdown-component">
+					<p className="student-prompt">Which student is participating?</p>
+					<div align="center">
+						<select name="mydropdown" onChange={this.selectChange}>
+							<option value="Pick">Pick a student</option>
+							{allStudents}
+						</select>
+					</div>
+				</div>
+				<Link onClick={this.updateStoryRead}className="button" to={'/stories/'+this.props.params.storyId+'/read'}>Read Now</Link>
+                <section>
+                <a href= '#' onClick={this.openModal}>Add a New Student</a>
+                 	<Rayon isOpen={this.state.modalVisible} onClose={this.closeModal}>
+                     	<form className="add-student" onSubmit={this.addStudent}>
+                     		<h1>Add a Student</h1>
+                     		<fieldset>
+								<label className="add-student-fName-label">First Name</label>
+								<input type = "text" ref = "fName" placeholder = "First Name"></input>
+								<label className="add-student-lName-label">Last Name</label>
+								<input type = "text" ref = "lName" placeholder = "Last Name"></input>
+							</fieldset>
+							<div className = 'button-container'>
+								<button className = 'button'>Submit</button>
+								<a href = '#' className = "close" onClick={this.closeModal}>Cancel</a>
+							</div>
+						</form>
+                 	</Rayon>
+            	</section>
 				<div className="row">
 					<div className="one-third column">&nbsp;&nbsp;</div>
 					<div className="two-thirds column">
@@ -67,7 +95,8 @@ export default React.createClass({
             modalVisible: true
         });
     },
-    closeModal: function() {
+    closeModal: function(e) {
+    	e.preventDefault();
         this.setState({
             modalVisible: false
         });
