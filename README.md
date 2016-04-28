@@ -79,17 +79,29 @@
 ![](./Pointer-App.png)
 ## Contributors
 [Janina Hartley](https://github.com/jhartley1412)
+
 [Anna Hunter](https://github.com/afmonty)
+
 [Katy Cassidy](https://github.com/ihatetoast)
+
 [Jen Udan](https://github.com/judan)
+
 [Dana Lachman](https://github.com/tinydinosaurs)
+
 [Maria Zamora](https://github.com/zamariac)
+
 [Will Cook](https://github.com/willcook4code)
+
 [Dan Buda](https://github.com/DanBuda11)
+
 [Nate Hawthorne](https://github.com/NJHawthorne)
+
 [Martin Grossmann](https://github.com/MHG16)
+
 [Mory Friedman](https://github.com/Moryf1990)
+
 [Josh Warner](https://github.com/joshwerner85)
+
 [Haythem  Hammour](https://github.com/hammour)
 
 
