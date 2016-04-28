@@ -24,7 +24,7 @@ export default React.createClass({
 						<input className="u-full-width" type="text" placeholder="email" ref='email' title="Should be a valid email address" required="required"/>
 						<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
 						<input className="u-full-width" type="password" placeholder="password" ref='password' title="Password is required and cannot left blank" required="required"/>
-						<div className="error">{this.state.errors.password ? this.state.errors.password.message : null} </div>
+						<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
 						<button className="button-primary" type='submit'> Login </button>
 					</form>
 				</div>
